@@ -44,9 +44,13 @@
   </div>
 
   <!-- Translate Button -->
-  <div class="flex items-center justify-center mt-4">
+  <div class="flex items-center justify-center mt-4 space-x-4">
     <button id="translateBtn" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
       Translate
+    </button>
+    <!-- Clear Button -->
+    <button id="clearBtn" class="bg-red-500 text-white py-2 px-6 rounded-lg hover:bg-red-600 transition">
+      Clear
     </button>
   </div>
 
@@ -101,6 +105,13 @@
       // If input is empty, clear the output area
       $('#translatedText').text('Translated text will appear here...');
     }
+  });
+
+  // Clear button click event
+  $('#clearBtn').click(function() {
+    // Clear both input and translated text
+    $('#inputText').val('');
+    $('#translatedText').text('Translated text will appear here...');
   });
 
   // Swap the two languages
