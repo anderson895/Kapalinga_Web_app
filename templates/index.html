@@ -1,59 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kapalinga Translator</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <div class="w-11/12 max-w-md bg-white p-6 rounded-lg shadow-md">
-    <h1 class="text-center text-lg font-bold mb-6">Kapalinga</h1>
+{% include 'header.html' %}
+<div class="w-11/12 max-w-md bg-white p-6 rounded-lg shadow-md">
+  <h1 class="text-center text-lg font-bold mb-6">Kapalinga</h1>
 
-    <!-- Language Selection -->
-    <div class="flex items-center justify-between mb-6">
-      <!-- Dropdown for Language 1-->
-      <div class="relative">
-        <select id="language1" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
-          <option>English</option>
-          <option>Tagalog</option>
-          <option>Kapampangan</option>
-        </select>
-      </div>
-
-      <!-- Swap Button -->
-      <button id="swapBtn" class="bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition">
-        <span class="text-xl">⇆</span>
-      </button>
-
-      <div>
-        <!-- Dropdown for Language 2-->
-        <div class="relative">
-          <select id="language2" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
-            <option>Kapampangan</option>
-            <option>English</option>
-            <option>Tagalog</option>
-          </select>
-        </div>
-      </div>
+  <!-- Language Selection -->
+  <div class="flex items-center justify-between mb-6">
+    <!-- Dropdown for Language 1-->
+    <div class="relative">
+      <select id="language1" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
+        <option>English</option>
+        <option>Tagalog</option>
+        <option>Kapampangan</option>
+      </select>
     </div>
 
-    <!-- Input and Output Text Areas -->
-    <div class="space-y-4">
-      <!-- Input Area -->
-      <textarea
-        class="w-full h-24 bg-gray-100 border border-gray-300 rounded-lg p-4 focus:outline-none focus:ring focus:border-gray-400 resize-none"
-        placeholder="Enter text here"
-      ></textarea>
+    <!-- Swap Button -->
+    <button id="swapBtn" class="bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition">
+      <span class="text-xl">⇆</span>
+    </button>
 
-      <!-- Output Area -->
-      <div class="w-full h-24 bg-gray-100 border border-gray-300 rounded-lg p-4">
-        <p class="text-gray-700">Kapampangan</p>
+    <div>
+      <!-- Dropdown for Language 2-->
+      <div class="relative">
+        <select id="language2" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
+          <option>Kapampangan</option>
+          <option>English</option>
+          <option>Tagalog</option>
+        </select>
       </div>
     </div>
   </div>
 
-  <script src="/static/js/app.js"></script>
-</body>
-</html>
+  <!-- Input and Output Text Areas -->
+  <div class="space-y-4">
+    <!-- Input Area -->
+    <textarea
+      class="w-full h-24 bg-gray-100 border border-gray-300 rounded-lg p-4 focus:outline-none focus:ring focus:border-gray-400 resize-none"
+      placeholder="Enter text here"
+    ></textarea>
+
+    <!-- Output Area -->
+    <div class="w-full h-24 bg-gray-100 border border-gray-300 rounded-lg p-4">
+      <p class="text-gray-700">Kapampangan</p>
+    </div>
+  </div>
+
+  <!-- Microphone Toggle -->
+  <div class="flex items-center justify-center mt-4">
+    <button id="micToggle" class="bg-gray-200 p-2 rounded-full">
+      <i id="micIcon" class="fa fa-microphone-slash text-xl"></i>
+    </button>
+  </div>
+</div>
+
+{% include 'footer.html' %}
+
+<script>
+  // Toggle microphone icon
+  const micToggle = document.getElementById('micToggle');
+  const micIcon = document.getElementById('micIcon');
+
+  micToggle.addEventListener('click', () => {
+    if (micIcon.classList.contains('fa-microphone-slash')) {
+      micIcon.classList.remove('fa-microphone-slash');
+      micIcon.classList.add('fa-microphone');
+    } else {
+      micIcon.classList.remove('fa-microphone');
+      micIcon.classList.add('fa-microphone-slash');
+    }
+  });
+</script>
