@@ -43,6 +43,13 @@
     </div>
   </div>
 
+  <!-- Translate Button -->
+  <div class="flex items-center justify-center mt-4">
+    <button id="translateBtn" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
+      Translate
+    </button>
+  </div>
+
   <!-- Microphone Toggle -->
   <div class="flex items-center justify-center mt-4">
     <button id="micToggle" class="bg-gray-200 p-2 rounded-full">
@@ -55,47 +62,46 @@
 
 <script src="/static/js/mic_controller.js"></script>
 <script>
+  // Translate button click event
+  $('#translateBtn').click(function() {
+    const inputText = $('#inputText').val();
+    const language1 = $('#language1').val().toLowerCase();
+    const language2 = $('#language2').val().toLowerCase();
 
-    
- $('#inputText').on('input', function() {
-  const inputText = $('#inputText').val();
-  const language1 = $('#language1').val().toLowerCase();
-  const language2 = $('#language2').val().toLowerCase();
+    // API endpoint
+    const endpoint = '/translate';
 
-  // API endpoint
-  const endpoint = '/translate';
+    // Check if input text is not empty
+    if (inputText.trim() !== '') {
+      // Show loading text
+      $('#translatedText').text('Translating...');
 
-  // Check if input text is not empty
-  if (inputText.trim() !== '') {
-    // Show loading text
-    $('#translatedText').text('Translating...');
-
-    // Use a POST request to send the input text and language information
-    fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        text: inputText,
-        from_lang: language1,
-        to_lang: language2
-      }),
-    })
-    .then(response => response.json())
-    .then(data => {
-      const translatedText = data.translation || 'No translation available';
-      $('#translatedText').text(translatedText);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      $('#translatedText').text('Error occurred while translating.');
-    });
-  } else {
-    // If input is empty, clear the output area
-    $('#translatedText').text('Translated text will appear here...');
-  }
-});
+      // Use a POST request to send the input text and language information
+      fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          text: inputText,
+          from_lang: language1,
+          to_lang: language2
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        const translatedText = data.translation || 'No translation available';
+        $('#translatedText').text(translatedText);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        $('#translatedText').text('Error occurred while translating.');
+      });
+    } else {
+      // If input is empty, clear the output area
+      $('#translatedText').text('Translated text will appear here...');
+    }
+  });
 
   // Swap the two languages
   $('#swapBtn').click(function() {
@@ -111,6 +117,4 @@
       $('#language1').val('Kapampangan');
     }
   });
-
-
 </script>
