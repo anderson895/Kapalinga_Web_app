@@ -17,6 +17,7 @@ endpoint_map = {
 
 # Function to fetch translation from Kapalinga API
 def get_translation(word, endpoint):
+    word = word.lower()  # Normalize case by converting the word to lowercase
     url = f"{endpoint}?word={word}"
     try:
         response = requests.get(url)
@@ -78,7 +79,7 @@ def translate():
     to_lang = data.get('to_lang')
 
     if not text or not from_lang or not to_lang:
-        return jsonify({"translation": "Invalid input"}), 400
+        return jsonify({"translation": "Invalid input"}), 400  # Handle invalid input
 
     translated_text = translate_text(text, from_lang, to_lang)
     return jsonify({"translation": translated_text})
