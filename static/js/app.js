@@ -23,23 +23,3 @@ $('#language1').change(function() {
       $('#language1').val('Kapampangan');
     }
   });
-
-  // Swap the two languages
-  $('#swapBtn').click(function() {
-    const lang1 = $('#language1').val();
-    const lang2 = $('#language2').val();
-
-    // Swap the values
-    $('#language1').val(lang2);
-    $('#language2').val(lang1);
-
-    // Ensure that one of the dropdowns is always set to Kapampangan
-    if ($('#language1').val() !== 'Kapampangan' && $('#language2').val() !== 'Kapampangan') {
-      $('#language1').val('Kapampangan');
-    }
-  });
-
-
-
-
-  

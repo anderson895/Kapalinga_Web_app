@@ -4,6 +4,7 @@
 
   <!-- Language Selection -->
   <div class="flex items-center justify-between mb-6">
+    <!-- Dropdown for Language 1-->
     <div class="relative">
       <select id="language1" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
         <option>English</option>
@@ -12,31 +13,33 @@
       </select>
     </div>
 
+    <!-- Swap Button -->
     <button id="swapBtn" class="bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition">
       <span class="text-xl">⇆</span>
     </button>
 
-    <div>
-      <div class="relative">
-        <select id="language2" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
-          <option>Kapampangan</option>
-          <option>English</option>
-          <option>Tagalog</option>
-        </select>
-      </div>
+    <!-- Dropdown for Language 2-->
+    <div class="relative">
+      <select id="language2" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
+        <option>Kapampangan</option>
+        <option>English</option>
+        <option>Tagalog</option>
+      </select>
     </div>
   </div>
 
   <!-- Input and Output Text Areas -->
   <div class="space-y-4">
+    <!-- Input Area -->
     <textarea
       id="inputText"
       class="w-full h-24 bg-white-100 border border-gray-300 rounded-lg p-4 focus:outline-none focus:ring focus:border-gray-400 resize-none"
       placeholder="Enter text here"
     ></textarea>
 
-    <div id="outputArea" class="w-full h-24 bg-gray-100 border border-gray-300 rounded-lg p-4">
-      <p class="text-gray-700">Translated text will appear here</p>
+    <!-- Output Area -->
+    <div class="w-full h-24 bg-gray-100 border border-gray-300 rounded-lg p-4">
+      <p id="translatedText" class="text-gray-700">Translated text will appear here...</p>
     </div>
   </div>
 
@@ -51,115 +54,61 @@
 {% include 'footer.html' %}
 
 <script src="/static/js/mic_controller.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script>
-  $(document).ready(function () {
-    // Function to handle translation
-    function translateText(text, sourceLanguage, targetLanguage) {
-      if (!text.trim()) {
-        $('#outputArea').text(''); // Clear output if there's no input text
-        return;
-      }
+ $('#inputText').on('input', function() {
+  const inputText = $('#inputText').val();
+  const language1 = $('#language1').val().toLowerCase();
+  const language2 = $('#language2').val().toLowerCase();
 
-      const BASE_URL = "https://kapalinga-api.vercel.app/translate";
-      const endpointMap = {
-        "English_Kapampangan": "english_kapampangan",
-        "Kapampangan_English": "kapampangan_english",
-        "Kapampangan_Tagalog": "kapampangan_tagalog",
-        "Tagalog_Kapampangan": "tagalog_kapampangan",
-      };
+  // API endpoint
+  const endpoint = '/translate';
 
-      const key = `${sourceLanguage}_${targetLanguage}`;
-      const endpoint = endpointMap[key];
-      if (!endpoint) {
-        $('#outputArea').text(text); // Return original text if no translation found
-        return;
-      }
+  // Check if input text is not empty
+  if (inputText.trim() !== '') {
+    // Show loading text
+    $('#translatedText').text('Translating...');
 
-      const words = text.split(' '); // Split the text into words
-      const translatedWords = [];
-      let index = 0;
+    // Use a POST request to send the input text and language information
+    fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        text: inputText,
+        from_lang: language1,
+        to_lang: language2
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      const translatedText = data.translation || 'No translation available';
+      $('#translatedText').text(translatedText);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      $('#translatedText').text('Error occurred while translating.');
+    });
+  } else {
+    // If input is empty, clear the output area
+    $('#translatedText').text('Translated text will appear here...');
+  }
+});
 
-      function fetchTranslation(wordOrPhrase) {
-        return $.ajax({
-          url: `${BASE_URL}/${endpoint}?word=${encodeURIComponent(wordOrPhrase)}`,
-          method: 'GET',
-          dataType: 'json'
-        });
-      }
+  // Swap the two languages
+  $('#swapBtn').click(function() {
+    const lang1 = $('#language1').val();
+    const lang2 = $('#language2').val();
 
-      function processWords() {
-        if (index >= words.length) {
-          $('#outputArea').text(translatedWords.join(' ')); // Display the final translated text
-          return;
-        }
+    // Swap the values
+    $('#language1').val(lang2);
+    $('#language2').val(lang1);
 
-        let phrase = words.slice(index, index + 3).join(' '); // Check for 3-word phrase
-        fetchTranslation(phrase)
-          .done(function (data) {
-            if (data.translation) {
-              translatedWords.push(data.translation);
-              index += 3;
-              processWords(); // Continue processing the next words
-            } else {
-              // Check for a 2-word phrase if 3-word doesn't exist
-              phrase = words.slice(index, index + 2).join(' ');
-              fetchTranslation(phrase)
-                .done(function (data2) {
-                  if (data2.translation) {
-                    translatedWords.push(data2.translation);
-                    index += 2;
-                    processWords();
-                  } else {
-                    // Finally, check for a single word
-                    fetchTranslation(words[index])
-                      .done(function (data3) {
-                        translatedWords.push(data3.translation || words[index]);
-                        index++;
-                        processWords();
-                      })
-                      .fail(function () {
-                        translatedWords.push(words[index]);
-                        index++;
-                        processWords();
-                      });
-                  }
-                })
-                .fail(function () {
-                  translatedWords.push(words[index]);
-                  index++;
-                  processWords();
-                });
-            }
-          })
-          .fail(function () {
-            translatedWords.push(words[index]);
-            index++;
-            processWords();
-          });
-      }
-
-      processWords();
+    // Ensure that one of the dropdowns is always set to Kapampangan
+    if ($('#language1').val() !== 'Kapampangan' && $('#language2').val() !== 'Kapampangan') {
+      $('#language1').val('Kapampangan');
     }
-
-    // Handle input change and trigger translation
-    $('#inputText').on('input', function () {
-      const inputText = $(this).val();
-      const sourceLanguage = $('#language1').val();
-      const targetLanguage = $('#language2').val();
-      translateText(inputText, sourceLanguage, targetLanguage);
-    });
-
-    // Handle language swap
-    $('#swapBtn').on('click', function () {
-      const language1 = $('#language1').val();
-      const language2 = $('#language2').val();
-      $('#language1').val(language2);
-      $('#language2').val(language1);
-      const inputText = $('#inputText').val();
-      translateText(inputText, $('#language1').val(), $('#language2').val());
-    });
   });
+
+
 </script>
