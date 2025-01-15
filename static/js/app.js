@@ -38,3 +38,8 @@ $('#language1').change(function() {
       $('#language1').val('Kapampangan');
     }
   });
+
+
+
+
+  
