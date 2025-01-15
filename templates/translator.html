@@ -1,65 +1,78 @@
 {% include 'header.html' %}
-<div class="w-11/12 max-w-md bg-white p-6 rounded-lg shadow-md">
-  <h1 class="text-center text-lg font-bold mb-6">Kapalinga</h1>
 
-  <!-- Language Selection -->
-  <div class="flex items-center justify-between mb-6">
-    <!-- Dropdown for Language 1-->
-    <div class="relative">
-      <select id="language1" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
-        <option>English</option>
-        <option>Tagalog</option>
-        <option>Kapampangan</option>
-      </select>
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl w-full p-4" style="background-color: aqua;">
+
+        <!-- Back Button -->
+        <div class="absolute top-4 left-4">
+            <a href="javascript:history.back()" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
+                Back
+            </a>
+        </div>
+
+        <div class="w-11/12 max-w-md bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-center text-lg font-bold mb-6">Kapalinga</h1>
+
+        <!-- Language Selection -->
+        <div class="flex items-center justify-between mb-6">
+            <!-- Dropdown for Language 1-->
+            <div class="relative">
+            <select id="language1" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
+                <option>English</option>
+                <option>Tagalog</option>
+                <option>Kapampangan</option>
+            </select>
+            </div>
+
+            <!-- Swap Button -->
+            <button id="swapBtn" class="bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition">
+            <span class="text-xl">⇆</span>
+            </button>
+
+            <!-- Dropdown for Language 2-->
+            <div class="relative">
+            <select id="language2" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
+                <option>Kapampangan</option>
+                <option>English</option>
+                <option>Tagalog</option>
+            </select>
+            </div>
+        </div>
+
+        <!-- Input and Output Text Areas -->
+        <div class="space-y-4">
+            <!-- Input Area -->
+            <textarea
+            id="inputText"
+            class="w-full h-24 bg-white-100 border border-gray-300 rounded-lg p-4 focus:outline-none focus:ring focus:border-gray-400 resize-none"
+            placeholder="Enter text here"
+            ></textarea>
+
+            <!-- Output Area -->
+            <div class="w-full h-24 bg-gray-100 border border-gray-300 rounded-lg p-4">
+            <p id="translatedText" class="text-gray-700">Translated text will appear here...</p>
+            </div>
+        </div>
+
+        <!-- Translate Button -->
+        <div class="flex items-center justify-center mt-4 space-x-4">
+            <button id="translateBtn" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
+            Translate
+            </button>
+            <!-- Clear Button -->
+            <button id="clearBtn" class="bg-red-500 text-white py-2 px-6 rounded-lg hover:bg-red-600 transition">
+            Clear
+            </button>
+        </div>
+
+        <!-- Microphone Toggle -->
+        <div class="flex items-center justify-center mt-4">
+            <button id="micToggle" class="bg-gray-200 p-2 rounded-full">
+            <i id="micIcon" class="fa fa-microphone-slash text-xl"></i>
+            </button>
+        </div>
+        </div>
     </div>
-
-    <!-- Swap Button -->
-    <button id="swapBtn" class="bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition">
-      <span class="text-xl">⇆</span>
-    </button>
-
-    <!-- Dropdown for Language 2-->
-    <div class="relative">
-      <select id="language2" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
-        <option>Kapampangan</option>
-        <option>English</option>
-        <option>Tagalog</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Input and Output Text Areas -->
-  <div class="space-y-4">
-    <!-- Input Area -->
-    <textarea
-      id="inputText"
-      class="w-full h-24 bg-white-100 border border-gray-300 rounded-lg p-4 focus:outline-none focus:ring focus:border-gray-400 resize-none"
-      placeholder="Enter text here"
-    ></textarea>
-
-    <!-- Output Area -->
-    <div class="w-full h-24 bg-gray-100 border border-gray-300 rounded-lg p-4">
-      <p id="translatedText" class="text-gray-700">Translated text will appear here...</p>
-    </div>
-  </div>
-
-  <!-- Translate Button -->
-  <div class="flex items-center justify-center mt-4 space-x-4">
-    <button id="translateBtn" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
-      Translate
-    </button>
-    <!-- Clear Button -->
-    <button id="clearBtn" class="bg-red-500 text-white py-2 px-6 rounded-lg hover:bg-red-600 transition">
-      Clear
-    </button>
-  </div>
-
-  <!-- Microphone Toggle -->
-  <div class="flex items-center justify-center mt-4">
-    <button id="micToggle" class="bg-gray-200 p-2 rounded-full">
-      <i id="micIcon" class="fa fa-microphone-slash text-xl"></i>
-    </button>
-  </div>
 </div>
 
 {% include 'footer.html' %}
