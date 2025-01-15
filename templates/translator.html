@@ -7,12 +7,12 @@
     </a>
 </div>
 
-<div class="w-11/12 max-w-md bg-white p-6 rounded-lg shadow-md">
+<div class="w-11/12 max-w-md bg-white p-6 rounded-lg shadow-md mx-auto mt-8">
     <h1 class="text-center text-lg font-bold mb-6">Kapalinga</h1>
 
     <!-- Language Selection -->
     <div class="flex items-center justify-between mb-6">
-        <!-- Dropdown for Language 1-->
+        <!-- Dropdown for Language 1 -->
         <div class="relative">
             <select id="language1" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
                 <option>English</option>
@@ -26,7 +26,7 @@
             <span class="text-xl">⇆</span>
         </button>
 
-        <!-- Dropdown for Language 2-->
+        <!-- Dropdown for Language 2 -->
         <div class="relative">
             <select id="language2" class="block w-full bg-gray-100 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-gray-400">
                 <option>Kapampangan</option>
@@ -46,30 +46,31 @@
         ></textarea>
 
         <!-- Output Area -->
-        <div class="w-full h-24 bg-gray-100 border border-gray-300 rounded-lg p-4 relative">
+        <div class="w-full bg-gray-100 border border-gray-300 rounded-lg p-4">
             <p id="translatedText" class="text-gray-700">Translated text will appear here...</p>
 
             <!-- Listen Button -->
-            <button id="listenBtn" class="absolute top-2 right-2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition">
-                <i class="fa fa-volume-up text-xl"></i>
-            </button>
+            <div class="flex justify-end mt-2">
+                <button id="listenBtn" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">
+                    <i class="fa fa-volume-up text-lg mr-2"></i> Listen
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- Translate Button -->
-    <div class="flex items-center justify-center mt-4 space-x-4">
+    <!-- Translate and Clear Buttons -->
+    <div class="flex items-center justify-center mt-6 space-x-4">
         <button id="translateBtn" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
             Translate
         </button>
-        <!-- Clear Button -->
         <button id="clearBtn" class="bg-red-500 text-white py-2 px-6 rounded-lg hover:bg-red-600 transition">
             Clear
         </button>
     </div>
 
     <!-- Microphone Toggle -->
-    <div class="flex items-center justify-center mt-4">
-        <button id="micToggle" class="bg-gray-200 p-2 rounded-full">
+    <div class="flex items-center justify-center mt-6">
+        <button id="micToggle" class="bg-gray-200 p-3 rounded-full">
             <i id="micIcon" class="fa fa-microphone-slash text-xl"></i>
         </button>
     </div>
@@ -78,21 +79,4 @@
 {% include 'footer.html' %}
 
 <script src="/static/js/mic_controller.js"></script>
-
-<script>
-    // Listen Button Functionality
-    const listenBtn = document.getElementById('listenBtn');
-    const translatedText = document.getElementById('translatedText');
-
-    listenBtn.addEventListener('click', () => {
-        const text = translatedText.textContent.trim();
-        if (!text) {
-            alert('There is no text to read.');
-            return;
-        }
-
-        const speech = new SpeechSynthesisUtterance(text);
-        speech.lang = 'en-US'; // Change this dynamically if needed based on the target language
-        window.speechSynthesis.speak(speech);
-    });
-</script>
+<script src="/static/js/listen_controller.js"></script>
