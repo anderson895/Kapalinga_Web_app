@@ -65,10 +65,16 @@ def translate_text(text, from_lang, to_lang):
 
     return ' '.join(translated_words)
 
-# Home route to render the index.html
+
 @app.route('/')
 def landing():
     return render_template('index.html')
+
+
+
+@app.route('/translator')
+def translator():
+    return render_template('translator.html')
 
 # Endpoint to handle translation (POST method)
 @app.route('/translate', methods=['POST'])
