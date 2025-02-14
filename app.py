@@ -68,12 +68,18 @@ def translate_text(text, from_lang, to_lang):
 
 @app.route('/')
 def landing():
-    return render_template('index.html')
+     return render_template('learn.html')
 
 
 @app.route('/events')
 def events():
     return render_template('events.html')
+
+
+
+@app.route('/learn')
+def events():
+    return render_template('learn.html')
 
 
 
