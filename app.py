@@ -78,7 +78,7 @@ def events():
 
 
 @app.route('/learn')
-def events():
+def learn():
     return render_template('learn.html')
 
 
