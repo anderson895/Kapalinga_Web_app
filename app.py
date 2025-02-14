@@ -68,7 +68,7 @@ def translate_text(text, from_lang, to_lang):
 
 @app.route('/')
 def landing():
-     return render_template('learn.html')
+     return render_template('translator.html')
 
 
 @app.route('/events')
@@ -77,11 +77,12 @@ def events():
 
 
 
+@app.route('/learn')
+def events():
+    return render_template('learn.html')
 
 
-@app.route('/translator')
-def translator():
-    return render_template('translator.html')
+
 
 # Endpoint to handle translation (POST method)
 @app.route('/translate', methods=['POST'])
