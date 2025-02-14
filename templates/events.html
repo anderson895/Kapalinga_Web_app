@@ -1,84 +1,54 @@
 {% include 'header.html' %}
+
 <!-- Main Section -->
-<div class="max-w-4xl mx-auto p-4 sm:p-6">
-    <!-- Header -->
-    <div class="text-center py-4 sm:py-6 bg-white shadow-md">
-      <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-orange-500">KapaLinga</h1>
+<div class="max-w-4xl mx-auto p-6">
+  <!-- Header -->
+  <div class="text-center py-6 bg-white shadow-md">
+    <h1 class="text-2xl font-bold text-orange-500">KapaLinga</h1>
+  </div>
+
+  <h2 class="text-lg font-semibold">Things to do in</h2>
+  <h1 class="text-3xl font-bold text-gray-800">Pampanga</h1>
+
+  <!-- Scrollable Categories (Horizontal) -->
+  <div class="mt-4 flex overflow-x-auto space-x-4 scrollbar-hide">
+    <div class="text-center flex-shrink-0 w-40 md:w-48">
+      <img src="/static/images/event/discover.png" alt="Discoveries" class="rounded-lg shadow-md w-full h-32 object-cover">
+      <p class="mt-2 font-semibold">Discoveries</p>
     </div>
-  
-    <h2 class="text-base sm:text-lg md:text-xl font-semibold">Things to do in</h2>
-    <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-800">Pampanga</h1>
-  
-    <!-- Scrollable Categories (Horizontal) -->
-    <div class="mt-4 flex overflow-x-auto space-x-4 scrollbar-hide">
-      <div class="text-center flex-shrink-0 w-32 sm:w-36 md:w-48">
-        <img src="/static/images/event/discover.png" alt="Discoveries" class="rounded-lg shadow-md w-full h-24 sm:h-28 md:h-48 object-cover">
-        <p class="mt-2 font-semibold text-xs sm:text-sm md:text-base">Discoveries</p>
-      </div>
-      <div class="text-center flex-shrink-0 w-32 sm:w-36 md:w-48">
-        <img src="/static/images/event/eventFestival.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full h-24 sm:h-28 md:h-48 object-cover">
-        <p class="mt-2 font-semibold text-xs sm:text-sm md:text-base">Events & Festivals</p>
-      </div>
-      <div class="text-center flex-shrink-0 w-32 sm:w-36 md:w-48">
-        <img src="/static/images/event/foodDeli.png" alt="Food & Deli" class="rounded-lg shadow-md w-full h-24 sm:h-28 md:h-48 object-cover">
-        <p class="mt-2 font-semibold text-xs sm:text-sm md:text-base">Food & Deli</p>
-      </div>
-
-      
-      <div class="text-center flex-shrink-0 w-32 sm:w-36 md:w-48">
-        <img src="/static/images/event/discover.png" alt="Discoveries" class="rounded-lg shadow-md w-full h-24 sm:h-28 md:h-48 object-cover">
-        <p class="mt-2 font-semibold text-xs sm:text-sm md:text-base">Discoveries</p>
-      </div>
-      <div class="text-center flex-shrink-0 w-32 sm:w-36 md:w-48">
-        <img src="/static/images/event/eventFestival.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full h-24 sm:h-28 md:h-48 object-cover">
-        <p class="mt-2 font-semibold text-xs sm:text-sm md:text-base">Events & Festivals</p>
-      </div>
-      <div class="text-center flex-shrink-0 w-32 sm:w-36 md:w-48">
-        <img src="/static/images/event/foodDeli.png" alt="Food & Deli" class="rounded-lg shadow-md w-full h-24 sm:h-28 md:h-48 object-cover">
-        <p class="mt-2 font-semibold text-xs sm:text-sm md:text-base">Food & Deli</p>
-      </div>
-
-
-      <div class="text-center flex-shrink-0 w-32 sm:w-36 md:w-48">
-        <img src="/static/images/event/discover.png" alt="Discoveries" class="rounded-lg shadow-md w-full h-24 sm:h-28 md:h-48 object-cover">
-        <p class="mt-2 font-semibold text-xs sm:text-sm md:text-base">Discoveries</p>
-      </div>
-      <div class="text-center flex-shrink-0 w-32 sm:w-36 md:w-48">
-        <img src="/static/images/event/eventFestival.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full h-24 sm:h-28 md:h-48 object-cover">
-        <p class="mt-2 font-semibold text-xs sm:text-sm md:text-base">Events & Festivals</p>
-      </div>
-      <div class="text-center flex-shrink-0 w-32 sm:w-36 md:w-48">
-        <img src="/static/images/event/foodDeli.png" alt="Food & Deli" class="rounded-lg shadow-md w-full h-24 sm:h-28 md:h-48 object-cover">
-        <p class="mt-2 font-semibold text-xs sm:text-sm md:text-base">Food & Deli</p>
-      </div>
-
-
+    <div class="text-center flex-shrink-0 w-40 md:w-48">
+      <img src="/static/images/event/eventFestival.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full h-32 object-cover">
+      <p class="mt-2 font-semibold">Events & Festivals</p>
     </div>
-  
-    <!-- Events & Festivals Scrollable Section (Vertical) -->
-    <div class="mt-8">
-      <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-4">Events & Festivals</h2>
-      <div class="max-h-80 sm:max-h-96 overflow-y-auto space-y-4 scrollbar-hide">
-        <div class="bg-white shadow-md rounded-lg p-4 flex flex-col sm:flex-row items-start sm:items-center">
-          <img src="/static/images/event/airbaloon.png" alt="Hot Air Balloon Festival" class="w-full sm:w-32 md:w-40 h-24 sm:h-32 md:h-48 rounded-md object-cover">
-          <div class="sm:ml-4 mt-2 sm:mt-0">
-            <h3 class="text-base sm:text-lg md:text-xl font-bold">Hot Air Balloon Festival</h3>
-            <p class="text-xs sm:text-sm md:text-base text-gray-600">(February 16-18)</p>
-            <p class="text-xs sm:text-sm md:text-base text-gray-500">Clark, Freeport Zone</p>
-          </div>
+    <div class="text-center flex-shrink-0 w-40 md:w-48">
+      <img src="/static/images/event/foodDeli.png" alt="Food & Deli" class="rounded-lg shadow-md w-full h-32 object-cover">
+      <p class="mt-2 font-semibold">Food & Deli</p>
+    </div>
+  </div>
+
+  <!-- Events & Festivals Scrollable Section (Vertical) -->
+  <div class="mt-8">
+    <h2 class="text-xl font-bold mb-4">Events & Festivals</h2>
+    <div class="max-h-96 overflow-y-auto space-y-4 scrollbar-hide">
+      <div class="bg-white shadow-md rounded-lg p-4 flex flex-col md:flex-row items-start md:items-center">
+        <img src="/static/images/event/airbaloon.png" alt="Hot Air Balloon Festival" class="w-full md:w-40 h-32 rounded-md object-cover">
+        <div class="md:ml-4 mt-2 md:mt-0">
+          <h3 class="text-lg font-bold">Hot Air Balloon Festival</h3>
+          <p class="text-sm text-gray-600">(February 16-18)</p>
+          <p class="text-sm text-gray-500">Clark, Freeport Zone</p>
         </div>
-        <div class="bg-white shadow-md rounded-lg p-4 flex flex-col sm:flex-row items-start sm:items-center">
-          <img src="/static/images/event/giant_lantern.jpg" alt="Giant Lantern Festival" class="w-full sm:w-32 md:w-40 h-24 sm:h-32 md:h-48 rounded-md object-cover">
-          <div class="sm:ml-4 mt-2 sm:mt-0">
-            <h3 class="text-base sm:text-lg md:text-xl font-bold">Giant Lantern Festival</h3>
-            <p class="text-xs sm:text-sm md:text-base text-gray-600">(Dec 14 - Jan 1)</p>
-            <p class="text-xs sm:text-sm md:text-base text-gray-500">San Fernando, Pampanga</p>
-          </div>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4 flex flex-col md:flex-row items-start md:items-center">
+        <img src="/static/images/event/giant_lantern.jpg" alt="Giant Lantern Festival" class="w-full md:w-40 h-32 rounded-md object-cover">
+        <div class="md:ml-4 mt-2 md:mt-0">
+          <h3 class="text-lg font-bold">Giant Lantern Festival</h3>
+          <p class="text-sm text-gray-600">(Dec 14 - Jan 1)</p>
+          <p class="text-sm text-gray-500">San Fernando, Pampanga</p>
         </div>
       </div>
     </div>
+  </div>
 </div>
-  
 
 <footer class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-300 flex justify-around items-center py-2 mt-8">
   <div class="flex flex-col items-center">
