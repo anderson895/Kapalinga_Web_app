@@ -3,61 +3,93 @@
 
 
 
+  <!-- Main Section -->
+  <div class="max-w-4xl mx-auto p-6">
+
 
   <!-- Header -->
-  <div class="flex flex-col items-center mb-6">
-    <img src="/static/images/logo.png" alt="Kapalinga Logo" class="h-20 w-20 mb-2">
-    <h1 class="text-lg font-bold text-gray-800">Kapalinga</h1>
-</div>
+  <div class="text-center py-6 bg-white shadow-md">
+    <h1 class="text-2xl font-bold text-orange-500">KapaLinga</h1>
+  </div>
 
-<!-- Main Section -->
-<div class="max-w-4xl mx-auto p-6">
-    
+
     <h2 class="text-lg font-semibold">Things to do in</h2>
     <h1 class="text-3xl font-bold text-gray-800">Pampanga</h1>
 
-    <!-- Categories -->
-    <div class="grid grid-cols-3 gap-4 mt-4">
-        <div class="text-center">
-            <img src="your-image1.jpg" alt="Discoveries" class="rounded-lg shadow-md w-full">
-            <p class="mt-2 font-semibold">Discoveries</p>
-        </div>
-        <div class="text-center">
-            <img src="your-image2.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full">
-            <p class="mt-2 font-semibold">Events & Festivals</p>
-        </div>
-        <div class="text-center">
-            <img src="your-image3.jpg" alt="Food & Deli" class="rounded-lg shadow-md w-full">
-            <p class="mt-2 font-semibold">Food & Deli</p>
-        </div>
+    <!-- Scrollable Categories (Horizontal) -->
+    <div class="mt-4 overflow-x-auto whitespace-nowrap flex space-x-4">
+      <div class="text-center flex-shrink-0 w-40">
+        <img src="/static/images/event/discover.png" alt="Discoveries" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 font-semibold">Discoveries</p>
+      </div>
+      <div class="text-center flex-shrink-0 w-40">
+        <img src="/static/images/event/eventFestival.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 font-semibold">Events & Festivals</p>
+      </div>
+      <div class="text-center flex-shrink-0 w-40">
+        <img src="/static/images/event/foodDeli.png" alt="Food & Deli" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 font-semibold">Food & Deli</p>
+      </div>
+
+      <div class="text-center flex-shrink-0 w-40">
+        <img src="your-image1.jpg" alt="Discoveries" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 font-semibold">Discoveries</p>
+      </div>
+      <div class="text-center flex-shrink-0 w-40">
+        <img src="your-image2.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 font-semibold">Events & Festivals</p>
+      </div>
+      <div class="text-center flex-shrink-0 w-40">
+        <img src="your-image3.jpg" alt="Food & Deli" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 font-semibold">Food & Deli</p>
+      </div>
+
+      <div class="text-center flex-shrink-0 w-40">
+        <img src="your-image1.jpg" alt="Discoveries" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 font-semibold">Discoveries</p>
+      </div>
+      <div class="text-center flex-shrink-0 w-40">
+        <img src="your-image2.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 font-semibold">Events & Festivals</p>
+      </div>
+      <div class="text-center flex-shrink-0 w-40">
+        <img src="your-image3.jpg" alt="Food & Deli" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 font-semibold">Food & Deli</p>
+      </div>
+      <!-- Add more categories if needed -->
     </div>
 
-    <!-- Events & Festivals -->
+    <!-- Events & Festivals Scrollable Section (Vertical) -->
     <div class="mt-8">
-        <h2 class="text-xl font-bold">Events & Festivals</h2>
-
+      <h2 class="text-xl font-bold mb-4">Events & Festivals</h2>
+      
+      <div class="max-h-96 overflow-y-auto space-y-4">
         <!-- Hot Air Balloon Festival -->
-        <div class="mt-4 bg-white shadow-md rounded-lg p-4 flex items-center">
-            <img src="hot-air-balloon.jpg" alt="Hot Air Balloon Festival" class="w-24 h-24 rounded-md">
-            <div class="ml-4">
-                <h3 class="text-lg font-bold">Hot Air Balloon Festival</h3>
-                <p class="text-sm text-gray-600">(February 16-18)</p>
-                <p class="text-sm text-gray-500">Clark, Freeport Zone</p>
-            </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="/static/images/event/airbaloon.png" alt="Hot Air Balloon Festival" class="w-full h-32 rounded-md object-cover">
+          <h3 class="text-lg font-bold mt-2">Hot Air Balloon Festival</h3>
+          <p class="text-sm text-gray-600">(February 16-18)</p>
+          <p class="text-sm text-gray-500">Clark, Freeport Zone</p>
         </div>
 
         <!-- Giant Lantern Festival -->
-        <div class="mt-4 bg-white shadow-md rounded-lg p-4 flex items-center">
-            <img src="giant-lantern.jpg" alt="Giant Lantern Festival" class="w-24 h-24 rounded-md">
-            <div class="ml-4">
-                <h3 class="text-lg font-bold">Giant Lantern Festival</h3>
-                <p class="text-sm text-gray-600">(Dec 14 - Jan 1)</p>
-                <p class="text-sm text-gray-500">San Fernando, Pampanga</p>
-            </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="/static/images/event/giant_lantern.jpg" alt="Giant Lantern Festival" class="w-full h-32 rounded-md object-cover">
+          <h3 class="text-lg font-bold mt-2">Giant Lantern Festival</h3>
+          <p class="text-sm text-gray-600">(Dec 14 - Jan 1)</p>
+          <p class="text-sm text-gray-500">San Fernando, Pampanga</p>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-4">
+          <img src="/static/images/event/goodFriday.jpg" alt="Giant Lantern Festival" class="w-full h-32 rounded-md object-cover">
+          <h3 class="text-lg font-bold mt-2">Giant Lantern Festival</h3>
+          <p class="text-sm text-gray-600">(Dec 14 - Jan 1)</p>
+          <p class="text-sm text-gray-500">San Fernando, Pampanga</p>
         </div>
 
+        <!-- Add more festival items vertically if needed -->
+      </div>
     </div>
-</div>
+  </div>
 
 
 
