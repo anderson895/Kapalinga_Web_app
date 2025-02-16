@@ -130,6 +130,10 @@ def events():
 def eventFestival():
     return render_template('events/eventFestival.html')
 
+@app.route('/events/foodDelicacies')
+def foodDelicacies():
+    return render_template('events/foodDelicacies.html')
+
 
 # Endpoint to handle translation (POST method)
 @app.route('/translate', methods=['POST'])
