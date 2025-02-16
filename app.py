@@ -82,6 +82,11 @@ def learn():
     return render_template('learn.html')
 
 
+@app.route('/learn/common_phrase')  # Updated route to lowercase with underscores
+def common_phrase():  # Updated function name to lowercase
+    return render_template('learn/common_phrase.html')
+
+
 
 
 # Endpoint to handle translation (POST method)
