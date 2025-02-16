@@ -92,6 +92,11 @@ def greetings():
     return render_template('learn/greetings.html')
 
 
+@app.route('/learn/directions')  
+def directions():  
+    return render_template('learn/directions.html')
+
+
 
 
 # Endpoint to handle translation (POST method)
