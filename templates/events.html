@@ -1,156 +1,103 @@
 {% include 'header.html' %}
+<div class="max-w-md w-full text-center p-8 bg-white shadow-lg rounded-2xl pb-40">
 
-<!-- Main Section -->
-<div class="max-w-4xl mx-auto p-6">
-  <!-- Header -->
-  <div class="text-center py-6 bg-white shadow-md">
-    <h1 class="text-2xl font-bold text-orange-500">KapaLinga</h1>
+
+  <div class="flex flex-col items-center mb-6">
+    <h1 class="text-lg font-bold text-orange-500">KapaLinga</h1>
   </div>
 
-  <h2 class="text-lg font-semibold">Things to do in</h2>
-  <h1 class="text-3xl font-bold text-gray-800">Pampanga</h1>
 
-  <!-- Scrollable Categories (Horizontal) -->
-  <div class="mt-4 flex overflow-x-auto space-x-4 scrollbar-hide">
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/discover.png" alt="Discoveries" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Discoveries</p>
-    </div>
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/eventFestival.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Events & Festivals</p>
-    </div>
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/foodDeli.png" alt="Food & Deli" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Food & Deli</p>
-    </div>
+  <!-- Section: Things to Do -->
+<!-- Section: Things to Do -->
+<div class="flex flex-col items-start pl-4">
+  <h2 class="text-sm font-semibold leading-tight">Things to do in</h2>
+  <h1 class="text-3xl font-bold text-black">Pampanga</h1>
+</div>
 
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/discover.png" alt="Discoveries" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Discoveries</p>
-    </div>
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/eventFestival.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Events & Festivals</p>
-    </div>
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/foodDeli.png" alt="Food & Deli" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Food & Deli</p>
-    </div>
+<!-- Image Categories -->
+<!-- Image Categories Section -->
+<div class="overflow-x-auto whitespace-nowrap flex gap-4 p-2">
+  <div class="w-24 flex-shrink-0">
+    <img src="/static/images/event/discover.png" alt="Festivals" class="w-full h-24 rounded-lg">
+    <p class="text-center text-xs">Discoveries</p>
+  </div>
+  <div class="w-24 flex-shrink-0">
+    <img src="/static/images/event/eventFestival.jpg" alt="Food & Delicacies" class="w-full h-24 rounded-lg">
+    <p class="text-center text-xs">Events and festival</p>
+  </div>
+  <div class="w-24 flex-shrink-0">
+    <img src="/static/images/event/foodDeli.png" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
+    <p class="text-center text-xs">Food and delicacies</p>
+  </div>
+  <div class="w-24 flex-shrink-0">
+    <img src="/static/images/event/tourist.jpeg" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
+    <p class="text-center text-xs">Tourist Attractions</p>
+  </div>
+  
+  <!-- Magdagdag pa ng maraming items dito -->
+</div>
 
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/discover.png" alt="Discoveries" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Discoveries</p>
-    </div>
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/eventFestival.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Events & Festivals</p>
-    </div>
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/foodDeli.png" alt="Food & Deli" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Food & Deli</p>
-    </div>
 
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/discover.png" alt="Discoveries" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Discoveries</p>
-    </div>
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/eventFestival.jpg" alt="Events & Festivals" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Events & Festivals</p>
-    </div>
-    <div class="text-center flex-shrink-0 w-40 md:w-48">
-      <img src="/static/images/event/foodDeli.png" alt="Food & Deli" class="rounded-lg shadow-md w-full h-32 object-cover">
-      <p class="mt-2 font-semibold">Food & Deli</p>
-    </div>
+<!-- Discoveries Section -->
+<h2 class="mt-6 text-lg font-bold border-t pt-4">Discoveries</h2>
+
+<!-- Discovery Cards -->
+<div class="space-y-3 mt-3">
+  <div class="flex items-center bg-gray-800 text-white p-4 rounded-lg">
+    <img src="/static/images/event/Discoveries/Pampanga-food-culinary-capital-1-min.jpg" alt="Culinary" class="w-24 h-24 rounded-lg object-cover mr-4">
+    <p class="text-sm font-semibold">Culinary Capital of The Philippines</p>
+  </div>
+  <div class="flex items-center bg-gray-800 text-white p-4 rounded-lg">
+    <img src="/static/images/event/Discoveries/history.jpg" alt="History" class="w-24 h-24 rounded-lg object-cover mr-4">
+    <p class="text-sm font-semibold">Brief History of Pampanga</p>
   </div>
 
-  <!-- Events & Festivals Scrollable Section (Vertical) -->
-  <div class="mt-8">
-    <h2 class="text-xl font-bold mb-4">Events & Festivals</h2>
-    <div class="max-h-96 overflow-y-auto space-y-4 scrollbar-hide">
-      <div class="bg-white shadow-md rounded-lg p-4 flex flex-col md:flex-row items-start md:items-center">
-        <img src="/static/images/event/airbaloon.png" alt="Hot Air Balloon Festival" class="w-full md:w-40 h-32 rounded-md object-cover">
-        <div class="md:ml-4 mt-2 md:mt-0">
-          <h3 class="text-lg font-bold">Hot Air Balloon Festival</h3>
-          <p class="text-sm text-gray-600">(February 16-18)</p>
-          <p class="text-sm text-gray-500">Clark, Freeport Zone</p>
-        </div>
-      </div>
-      <div class="bg-white shadow-md rounded-lg p-4 flex flex-col md:flex-row items-start md:items-center">
-        <img src="/static/images/event/giant_lantern.jpg" alt="Giant Lantern Festival" class="w-full md:w-40 h-32 rounded-md object-cover">
-        <div class="md:ml-4 mt-2 md:mt-0">
-          <h3 class="text-lg font-bold">Giant Lantern Festival</h3>
-          <p class="text-sm text-gray-600">(Dec 14 - Jan 1)</p>
-          <p class="text-sm text-gray-500">San Fernando, Pampanga</p>
-        </div>
-      </div>
-
-
-      <div class="bg-white shadow-md rounded-lg p-4 flex flex-col md:flex-row items-start md:items-center">
-        <img src="/static/images/event/giant_lantern.jpg" alt="Giant Lantern Festival" class="w-full md:w-40 h-32 rounded-md object-cover">
-        <div class="md:ml-4 mt-2 md:mt-0">
-          <h3 class="text-lg font-bold">Giant Lantern Festival</h3>
-          <p class="text-sm text-gray-600">(Dec 14 - Jan 1)</p>
-          <p class="text-sm text-gray-500">San Fernando, Pampanga</p>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg p-4 flex flex-col md:flex-row items-start md:items-center">
-        <img src="/static/images/event/giant_lantern.jpg" alt="Giant Lantern Festival" class="w-full md:w-40 h-32 rounded-md object-cover">
-        <div class="md:ml-4 mt-2 md:mt-0">
-          <h3 class="text-lg font-bold">Giant Lantern Festival</h3>
-          <p class="text-sm text-gray-600">(Dec 14 - Jan 1)</p>
-          <p class="text-sm text-gray-500">San Fernando, Pampanga</p>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg p-4 flex flex-col md:flex-row items-start md:items-center">
-        <img src="/static/images/event/giant_lantern.jpg" alt="Giant Lantern Festival" class="w-full md:w-40 h-32 rounded-md object-cover">
-        <div class="md:ml-4 mt-2 md:mt-0">
-          <h3 class="text-lg font-bold">Giant Lantern Festival</h3>
-          <p class="text-sm text-gray-600">(Dec 14 - Jan 1)</p>
-          <p class="text-sm text-gray-500">San Fernando, Pampanga</p>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-md rounded-lg p-4 flex flex-col md:flex-row items-start md:items-center">
-        <img src="/static/images/event/giant_lantern.jpg" alt="Giant Lantern Festival" class="w-full md:w-40 h-32 rounded-md object-cover">
-        <div class="md:ml-4 mt-2 md:mt-0">
-          <h3 class="text-lg font-bold">Giant Lantern Festival</h3>
-          <p class="text-sm text-gray-600">(Dec 14 - Jan 1)</p>
-          <p class="text-sm text-gray-500">San Fernando, Pampanga</p>
-        </div>
-      </div>
-    </div>
+  <div class="flex items-center bg-gray-800 text-white p-4 rounded-lg">
+    <img src="/static/images/event/Discoveries/trad.jpeg" alt="History" class="w-24 h-24 rounded-lg object-cover mr-4">
+    <p class="text-sm font-semibold">Beliefs & Traditions</p>
   </div>
 </div>
 
-<footer class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-300 flex justify-around items-center py-2 mt-8">
+
+
+
+
+
+<footer class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-300 flex justify-around items-center py-2">
+    
   <div class="flex flex-col items-center">
-    <a href="https://kapalinga-web-app.vercel.app/">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 9v-6a2 2 0 014 0v6m-4 0h4" />
+  <a href="https://kapalinga-web-app.vercel.app/translator"></a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 9v-6a2 2 0 014 0v6m-4 0h4" />
       </svg>
       <span class="text-xs text-gray-700">Home</span>
-    </a>
+  </a>
   </div>
-  <div class="flex flex-col items-center">
-    <a href="https://kapalinga-web-app.vercel.app/learn">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      <span class="text-xs text-gray-700">Learn</span>
-    </a>
-  </div>
-  <div class="flex flex-col items-center">
-    <a href="https://kapalinga-web-app.vercel.app/events">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v4h4V7m0 4h4v4h-4v-4H8v4H4V7a1 1 0 011-1h14a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1v-3" />
-      </svg>
-      <span class="text-xs text-gray-700">Events</span>
-    </a>
-  </div>
-</footer>
 
+
+
+
+<div class="flex flex-col items-center">
+<a href="https://kapalinga-web-app.vercel.app/learn"></a>
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+</svg>
+<span class="text-xs text-gray-700">Learn</span>
+</a>
+</div>
+
+
+<div class="flex flex-col items-center">
+  
+<a href="https://kapalinga-web-app.vercel.app/events">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v4h4V7m0 4h4v4h-4v-4H8v4H4V7a1 1 0 011-1h14a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1v-3" />
+</svg>
+<span class="text-xs text-gray-700">Events</span>
+</a>
+</div>
+
+
+
+</footer>
 {% include 'footer.html' %}
