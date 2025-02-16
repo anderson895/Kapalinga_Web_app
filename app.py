@@ -97,6 +97,34 @@ def directions():
     return render_template('learn/directions.html')
 
 
+@app.route('/learn/transporation')  
+def transporation():  
+    return render_template('learn/transporation.html')
+
+@app.route('/learn/eating')  
+def eating():  
+    return render_template('learn/eating.html')
+
+
+
+@app.route('/learn/emergency')  
+def emergency():  
+    return render_template('learn/emergency.html')
+
+
+@app.route('/learn/numbers')  
+def numbers():  
+    return render_template('learn/numbers.html')
+
+@app.route('/learn/shopping')  
+def shopping():  
+    return render_template('learn/shopping.html')
+
+@app.route('/learn/dateTime')  
+def dateTime():  
+    return render_template('learn/dateTime.html')
+
+
 
 
 # Endpoint to handle translation (POST method)
