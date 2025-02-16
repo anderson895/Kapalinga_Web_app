@@ -1,0 +1,55 @@
+Numbers
+
+FORMAT
+
+English
+Tagalog
+Kapampangan
+
+One
+Isa
+Metung
+
+Two
+Dalawa
+Adua
+
+Three
+Tatlo
+Atlu
+
+Four
+Apat
+Apat
+
+Five
+Lima
+Lima
+
+Six
+Anim
+Anam
+
+Seven 
+Pito
+Pitu
+
+Eight
+Walo
+Walu
+
+Nine
+Siyam
+Siyam
+
+Ten
+Sampu
+Ampulu
+
+One Hundred
+Isang Daan
+Dinalan
+
+One Thousand
+Isang Libo
+Metung a libu
