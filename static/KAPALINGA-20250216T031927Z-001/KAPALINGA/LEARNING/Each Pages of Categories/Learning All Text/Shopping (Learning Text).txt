@@ -1,0 +1,55 @@
+Shopping 
+
+Format
+
+How much is this?
+Magkano po ito?
+Magkano ya ini?
+
+Do you have this?
+Meron ba nito?
+Atsu ya pu ini?
+
+Is it on sale?
+Naka-sale ba?
+Mag-sale la?
+
+Do you have a smaller size?
+Meron po bang maliit na size?
+Malati ya pu ing size?
+
+Is there another color?
+Meron bang ibang kulay?
+May aliwang kulay?
+
+Can i try it on?
+Pwede ko bang subukan?
+Pwedi ku ba tuki?
+
+How much is the total?
+Magkano ang lahat?
+Magkano ing kabuuan?
+
+Can you give me a discount?
+Wala na bang tawad?
+Pwedi bang tawad?
+
+Is my change correct?
+Tama po ba ang sukli ko?
+Balik ya ing sukli ku?
+
+How many do you want?
+Ilan po ang gusto niyo?
+Pilan ya pu kekayu?
+
+Is this cheap?
+Mura po ba ito?
+Mura ya pu ini?
+
+Is this expensive?
+Mahal po ba ito?
+Mal ya pu ini?
+
+What is this?
+Ano ito?
+Nanu ya ini?
