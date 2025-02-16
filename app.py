@@ -71,9 +71,6 @@ def landing():
      return render_template('translator.html')
 
 
-@app.route('/events')
-def events():
-    return render_template('events.html')
 
 
 
@@ -124,7 +121,14 @@ def shopping():
 def dateTime():  
     return render_template('learn/dateTime.html')
 
+@app.route('/events')
+def events():
+    return render_template('events.html')
 
+
+@app.route('/events/eventFestival')
+def eventFestival():
+    return render_template('events/eventFestival.html')
 
 
 # Endpoint to handle translation (POST method)
