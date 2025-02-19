@@ -139,6 +139,25 @@ def tourist():
     return render_template('events/tourist.html')
 
 
+
+@app.route('/events/view/Hot_Air_Balloon_Festival')
+def Hot_Air_Balloon_Festival():
+    return render_template('events/view/Hot_Air_Balloon_Festival.html')
+
+
+@app.route('/events/view/giant_lantern_festival_history')
+def giant_lantern_festival_history():
+    return render_template('events/view/giant_lantern_festival_history.html')
+
+@app.route('/events/view/auroraFestival')
+def auroraFestival():
+    return render_template('events/view/auroraFestival.html')
+
+@app.route('/events/view/SinukwanFestival')
+def SinukwanFestival():
+    return render_template('events/view/SinukwanFestival.html')
+
+
 # Endpoint to handle translation (POST method)
 @app.route('/translate', methods=['POST'])
 def translate():
