@@ -208,6 +208,25 @@ def trad():
     return render_template('events/view/trad.html')
 
 
+@app.route('/events/view/Tidtad')
+def Tidtad():
+    return render_template('events/view/Tidtad.html')
+
+@app.route('/events/view/tocino')
+def tocino():
+    return render_template('events/view/tocino.html')
+
+
+@app.route('/events/view/pampangasisig')
+def pampangasisig():
+    return render_template('events/view/pampangasisig.html')
+
+
+@app.route('/events/view/RazonsHaloHalo')
+def RazonsHaloHalo():
+    return render_template('events/view/RazonsHaloHalo.html')
+
+
 # Discoveries
 
 
