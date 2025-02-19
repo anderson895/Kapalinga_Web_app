@@ -66,12 +66,38 @@ def translate_text(text, from_lang, to_lang):
     return ' '.join(translated_words)
 
 
+
+# Endpoint to handle translation (POST method)
+@app.route('/translate', methods=['POST'])
+def translate():
+    data = request.get_json()
+    text = data.get('text')
+    from_lang = data.get('from_lang')
+    to_lang = data.get('to_lang')
+
+    if not text or not from_lang or not to_lang:
+        return jsonify({"translation": "Invalid input"}), 400  # Handle invalid input
+
+    translated_text = translate_text(text, from_lang, to_lang)
+    return jsonify({"translation": translated_text})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @app.route('/')
 def landing():
      return render_template('translator.html')
-
-
-
 
 
 @app.route('/learn')
@@ -140,6 +166,7 @@ def tourist():
 
 
 
+# EVENTS AND FESTIVAL
 @app.route('/events/view/Hot_Air_Balloon_Festival')
 def Hot_Air_Balloon_Festival():
     return render_template('events/view/Hot_Air_Balloon_Festival.html')
@@ -157,20 +184,13 @@ def auroraFestival():
 def SinukwanFestival():
     return render_template('events/view/SinukwanFestival.html')
 
+@app.route('/events/view/cruxiFestival')
+def cruxiFestival():
+    return render_template('events/view/cruxiFestival.html')
 
-# Endpoint to handle translation (POST method)
-@app.route('/translate', methods=['POST'])
-def translate():
-    data = request.get_json()
-    text = data.get('text')
-    from_lang = data.get('from_lang')
-    to_lang = data.get('to_lang')
 
-    if not text or not from_lang or not to_lang:
-        return jsonify({"translation": "Invalid input"}), 400  # Handle invalid input
+# Discoveries
 
-    translated_text = translate_text(text, from_lang, to_lang)
-    return jsonify({"translation": translated_text})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001)
