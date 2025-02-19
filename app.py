@@ -189,6 +189,25 @@ def cruxiFestival():
     return render_template('events/view/cruxiFestival.html')
 
 
+
+@app.route('/events/view/pampanga_food_culinary_capital')
+def pampanga_food_culinary_capital():
+    return render_template('events/view/pampanga_food_culinary_capital.html')
+
+
+
+@app.route('/events/view/history')
+def history():
+    return render_template('events/view/history.html')
+
+
+
+
+@app.route('/events/view/trad')
+def trad():
+    return render_template('events/view/trad.html')
+
+
 # Discoveries
 
 
