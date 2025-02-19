@@ -226,6 +226,18 @@ def pampangasisig():
 def RazonsHaloHalo():
     return render_template('events/view/RazonsHaloHalo.html')
 
+@app.route('/events/view/bringhe')
+def bringhe():
+    return render_template('events/view/bringhe.html')
+
+@app.route('/events/view/buro')
+def buro():
+    return render_template('events/view/buro.html')
+
+@app.route('/events/view/pancit_luglug')
+def pancit_luglug():
+    return render_template('events/view/pancit_luglug.html')
+
 
 # Discoveries
 
