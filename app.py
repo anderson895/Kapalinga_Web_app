@@ -239,6 +239,31 @@ def pancit_luglug():
     return render_template('events/view/pancit_luglug.html')
 
 
+@app.route('/events/view/puning')
+def puning():
+    return render_template('events/view/puning.html')
+
+@app.route('/events/view/sandbox')
+def sandbox():
+    return render_template('events/view/sandbox.html')
+
+@app.route('/events/view/skyRanch')
+def skyRanch():
+    return render_template('events/view/skyRanch.html')
+
+
+@app.route('/events/view/aqua')
+def aqua():
+    return render_template('events/view/aqua.html')
+
+
+@app.route('/events/view/clarkMuseum')
+def clarkMuseum():
+    return render_template('events/view/clarkMuseum.html')
+
+
+
+
 # Discoveries
 
 
