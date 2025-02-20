@@ -88,6 +88,10 @@ $('#translateBtn').click(function() {
       $('#translatedText').text('Translated text will appear here...');
     }
   });
+
+
+
+  
   
   // Clear button click event
   $('#clearBtn').click(function() {
