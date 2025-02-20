@@ -41,6 +41,34 @@ def translate_text(text, from_lang, to_lang):
     index = 0
 
     while index < len(words):
+
+
+        # Check for 6-word phrases first
+        phrase = ' '.join(words[index:index + 6])
+        translated_phrase = get_translation(phrase, endpoint)
+        if translated_phrase != phrase:
+            translated_words.append(translated_phrase)
+            index += 6  # Skip the next 6 words
+            continue
+
+        # Check for 5-word phrases first
+        phrase = ' '.join(words[index:index + 5])
+        translated_phrase = get_translation(phrase, endpoint)
+        if translated_phrase != phrase:
+            translated_words.append(translated_phrase)
+            index += 5  # Skip the next 5 words
+            continue
+
+
+        # Check for 4-word phrases first
+        phrase = ' '.join(words[index:index + 4])
+        translated_phrase = get_translation(phrase, endpoint)
+        if translated_phrase != phrase:
+            translated_words.append(translated_phrase)
+            index += 4  # Skip the next 3 words
+            continue
+
+
         # Check for 3-word phrases first
         phrase = ' '.join(words[index:index + 3])
         translated_phrase = get_translation(phrase, endpoint)
@@ -64,6 +92,8 @@ def translate_text(text, from_lang, to_lang):
         index += 1  # Move to the next word
 
     return ' '.join(translated_words)
+
+
 
 
 
