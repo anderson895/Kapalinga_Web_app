@@ -47,16 +47,18 @@
         ></textarea>
 
         <!-- Output Area -->
-        <div class="w-full h-48 bg-gray-100 border border-orange-300 rounded-2xl p-4">
-            <p id="translatedText" class="text-gray-700">Translated text will appear here...</p>
-
+        <div class="w-full h-48 bg-gray-100 border border-orange-300 rounded-2xl p-4 relative">
+            <!-- Translated Text Area -->
+            <textarea id="translatedText" class="w-full h-full bg-transparent border-none resize-none text-gray-700 focus:outline-none">
+                Translated text will appear here...
+            </textarea>
+        
             <!-- Listen Button -->
-            <div class="flex justify-end mt-2">
-                <button id="listenBtn" class="bg-gray-100 border border-orange-300  py-2 px-4 rounded-2xl hover:bg-gray-600 transition">
-                    <i class="fa fa-volume-up text-lg mr-2"></i> Listen
-                </button>
-            </div>
+            <button id="listenBtn" class="absolute bottom-4 right-4 bg-gray-100 border border-orange-300 py-2 px-4 rounded-2xl hover:bg-gray-600 transition">
+                <i class="fa fa-volume-up text-lg mr-2"></i> Listen
+            </button>
         </div>
+        
     </div>
 
     <!-- Translate and Clear Buttons -->
