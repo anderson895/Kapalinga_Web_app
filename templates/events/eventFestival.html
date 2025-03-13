@@ -1,65 +1,94 @@
-{% include 'header.html' %}
-<div class="max-w-md w-full text-center p-8 bg-white shadow-lg rounded-2xl pb-20">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kapalinga Translator</title>
+
+  <link rel="stylesheet" href="/static/css/events.css">
+  <link rel="icon" href="/static/images/logo.png" type="image/x-icon"> 
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<style>
+  @font-face {
+    font-family: 'Freigeist Black';
+    src: url('/static/font/FreigeistMonoBlack.woff') format('woff2'),
+         url('/static/font/FreigeistMonoBlack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .font-freigeist {
+    font-family: 'Freigeist Black', sans-serif;
+  }
+</style>
 
 
-  <div class="flex flex-col items-center mb-6">
-    <h1 class="text-lg font-bold text-orange-500">KapaLinga</h1>
-  </div>
+
+<div class="header">
+  KapaLinga
+</div>
+
+<div class="main-container">
 
 
 <!-- Section: Things to Do -->
-<div class="flex flex-col items-start pl-4">
-    <h2 class="text-sm font-semibold leading-tight">Things to do in</h2>
-    <h1 class="text-3xl font-bold text-black">Pampanga</h1>
-  </div>
+<div class="subheader">
+  <p>Things to do in</p>
+  <p>Pampanga</p>
+</div>
+<!-- Image Categories Section -->
+<div class="scroll-container">
+  <a href="/events">
+    <div class="scroll-item">
+      <img src="/static/images/event/discover.png" alt="Festivals" class="w-full h-24 rounded-lg">
+      <p class="text-center text-xs">Discoveries</p>
+    </div>
+  </a>
   
-  <!-- Image Categories Section -->
-  <div class="overflow-x-auto whitespace-nowrap flex gap-4 p-2">
-    <a href="https://kapalinga-web-app.vercel.app/events">
-      <div class="w-24 flex-shrink-0">
-        <img src="/static/images/event/discover.png" alt="Festivals" class="w-full h-24 rounded-lg">
-        <p class="text-center text-xs">Discoveries</p>
-      </div>
-    </a>
-    
-    <a href="https://kapalinga-web-app.vercel.app/events/eventFestival">
-      <div class="w-24 flex-shrink-0">
-        <img src="/static/images/event/eventFestival.jpg" alt="Food & Delicacies" class="w-full h-24 rounded-lg">
-        <p class="text-center text-xs">Events and festival</p>
-      </div>
-    </a>
-    
-    <a href="https://kapalinga-web-app.vercel.app/events/foodDelicacies">
-      <div class="w-24 flex-shrink-0">
-        <img src="/static/images/event/foodDeli.png" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
-        <p class="text-center text-xs">Food and delicacies</p>
-      </div>
-    </a>
-    
-    <a href="https://kapalinga-web-app.vercel.app/events/tourist">
-      <div class="w-24 flex-shrink-0">
-        <img src="/static/images/event/tourist.jpeg" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
-        <p class="text-center text-xs">Tourist Attractions</p>
-      </div>
-    </a>
-  </div>
+  <a href="/events/eventFestival">
+    <div class="scroll-item">
+      <img src="/static/images/event/eventFestival.jpg" alt="Food & Delicacies" class="w-full h-24 rounded-lg">
+      <p class="text-center text-xs">Events and festival</p>
+    </div>
+  </a>
+  
+  <a href="/events/foodDelicacies">
+    <div class="scroll-item">
+      <img src="/static/images/event/foodDeli.png" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
+      <p class="text-center text-xs">Food and delicacies</p>
+    </div>
+  </a>
+  
+  <a href="/events/tourist">
+    <div class="scroll-item">
+      <img src="/static/images/event/tourist.jpeg" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
+      <p class="text-center text-xs">Tourist Attractions</p>
+    </div>
+  </a>
+</div>
 
 
-<!-- Events & Festivals Section -->
+
+
+<!-- 
+
 <h2 class="mt-6 text-lg font-bold border-t pt-4">Events & Festivals</h2>
 
-<!--Cards -->
 <div class="space-y-3 mt-3 max-h-80 overflow-y-auto">
   
 
   <a href="https://kapalinga-web-app.vercel.app/events/view/Hot_Air_Balloon_Festival">
       <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-          <!-- Image (Fixed Size) -->
+        
           <img src="/static/images/106x100_outside/hot_air_balloon.png" 
               alt="Hot Air Balloon Festival" 
               class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
           
-          <!-- Text Container (Adjustable Width) -->
           <div class="flex flex-col pl-4 flex-1 min-w-0">
               <p class="text-lg font-bold truncate">Hot Air Balloon Festival</p>
               <p class="text-sm text-gray-300 break-words">(February 16-18)</p>
@@ -71,12 +100,12 @@
 
     <a href="https://kapalinga-web-app.vercel.app/events/view/giant-lantern-festival-history">
       <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-          <!-- Image (Fixed Size) -->
+      
           <img src="/static/images/106x100_outside/giant_lantern.png" 
               alt="Giant Lantern" 
               class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
           
-          <!-- Text Container (Adjustable Width) -->
+          
           <div class="flex flex-col pl-4 flex-1 min-w-0">
               <p class="text-lg font-bold truncate">Giant Lantern Festival</p>
               <p class="text-sm text-gray-300 break-words">(Dec 14 - Jan 1)</p>
@@ -89,12 +118,12 @@
 
     <a href="https://kapalinga-web-app.vercel.app/events/view/aurora">
       <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-          <!-- Image (Fixed Size) -->
+       
           <img src="/static/images/106x100_outside/aurora.png" 
               alt="Aurora" 
               class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
           
-          <!-- Text Container (Adjustable Width) -->
+       
           <div class="flex flex-col pl-4 flex-1 min-w-0">
               <p class="text-lg font-bold truncate">Aurora Music Festival</p>
               <p class="text-sm text-gray-300 break-words">(April - May)</p>
@@ -108,12 +137,11 @@
 
     <a href="https://kapalinga-web-app.vercel.app/events/view/SinukwanFestival">
       <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-          <!-- Image (Fixed Size) -->
+         
           <img src="/static/images/106x100_outside/sinukwan.png" 
               alt="Sinukwan" 
               class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
           
-          <!-- Text Container (Adjustable Width) -->
           <div class="flex flex-col pl-4 flex-1 min-w-0">
               <p class="text-lg font-bold truncate">Sinukwan Festival</p>
               <p class="text-sm text-gray-300 break-words">(December)</p>
@@ -127,12 +155,11 @@
 
     <a href="https://kapalinga-web-app.vercel.app/events/view/cruxiFestival">
       <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-        <!-- Image (Fixed Size) -->
+      
         <img src="/static/images/106x100_outside/Cruxi.png" 
              alt="Cruxia" 
              class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
-        
-        <!-- Text Container (Adjustable Width) -->
+    
         <div class="flex flex-col pl-4 flex-1 min-w-0">
             <p class="text-lg font-bold truncate">Good Friday Crucifixions</p>
             <p class="text-sm text-gray-300 break-words">Tourist Attraction during Holy week (Good Friday)</p>
@@ -142,49 +169,89 @@
     
     </a>
 
-  </div>
-  
-
-
-
-
-
-
-<footer class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-300 flex justify-around items-center py-2">
+  </div> -->
+  <div class="content-section">
+    <h2>Events & Festivals</h2>
+    <div class="vertical-scroll-container">
+      
+     
+      <div class="content-card" onclick="location.href='/events/view/Hot_Air_Balloon_Festival'" style="cursor: pointer;">
     
-  <div class="flex flex-col items-center">
-  <a href="https://kapalinga-web-app.vercel.app/translator">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 9v-6a2 2 0 014 0v6m-4 0h4" />
-      </svg>
-      <span class="text-xs text-gray-700">Home</span>
-  </a>
+            <img src="/static/images/106x100_outside/hot_air_balloon.png" alt="Culinary">
+            <div class="card-text">
+                <p>Hot Air Balloon Festival</p>
+                  <p>(February 16-18)</p>
+                  <p>Clark, Freeport Zone</p>
+            </div>
+        </div>
+    
+
+        <div class="content-card" onclick="location.href='/events/view/giant-lantern-festival-history'" style="cursor: pointer;">
+            <img src="/static/images/106x100_outside/giant_lantern.png" >
+            <div class="card-text">
+                <p>Giant Lantern Festival</p>
+                <p>(Dec 14 - Jan 1)</p>
+                <p>Clark, Freeport Zone</p>
+                
+            </div>
+        </div>
+
+        <!-- /events/view/aurora -->
+        <div class="content-card" onclick="location.href='/events/view/aurora'" style="cursor: pointer;">
+            <img src="/static/images/106x100_outside/aurora.png" alt="Beliefs">
+            <div class="card-text">
+                <p>Aurora Music Festival</p>
+                <p>(April - May)</p>
+                <p>Clark Global City, Pampanga</p>
+            </div>
+        </div>
+
+
+       <div class="content-card" onclick="location.href='/events/view/SinukwanFestival'" style="cursor: pointer;">
+            <img src="/static/images/106x100_outside/sinukwan.png" alt="Beliefs">
+            <div class="card-text">
+                <p>Sinukwan Festival</p>
+                <p>(December)</p>
+                <p>San Fernando City, Pampanga</p>
+            </div>
+        </div>
+
+        <div class="content-card" onclick="location.href='/events/view/cruxiFestival'" style="cursor: pointer;">
+            <img src="/static/images/106x100_outside/Cruxi.png" alt="Beliefs">
+            <div class="card-text">
+                <p>Good Friday Crucifixions</p>
+                <p>Tourist Attraction during Holy week (Good Friday)</p>
+                <p>Barangay San Pedro Cutud, San Fernando, Pampanga</p>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
   </div>
 
 
 
 
-<div class="flex flex-col items-center">
-<a href="https://kapalinga-web-app.vercel.app/learn">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-</svg>
-<span class="text-xs text-gray-700">Learn</span>
-</a>
+
+
+
+
 </div>
 
-
-<div class="flex flex-col items-center">
-  
-<a href="https://kapalinga-web-app.vercel.app/events">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v4h4V7m0 4h4v4h-4v-4H8v4H4V7a1 1 0 011-1h14a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1v-3" />
-</svg>
-<span class="text-xs text-gray-700">Events</span>
-</a>
+<div class="nav">
+    <a href="/" >
+        <img src="/static/images/home.svg" alt="Home" class="icon">
+        Home
+    </a>
+    <a href="/learn" >
+        <img src="/static/images/learn.svg" alt="Learn" class="icon">
+        Learn
+    </a>
+    <a href="/events" class="active">
+        <img src="/static/images/events.png" alt="Events" class="icon">
+        Events
+    </a>
 </div>
-
-
-
-</footer>
 {% include 'footer.html' %}
+<script src="/static/js/scroll.js"></script>

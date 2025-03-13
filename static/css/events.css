@@ -151,13 +151,37 @@ body {
 }
 
 .card-text {
-    padding: 12px;
+    padding: 10px; /* Bawasan ang padding */
     flex: 1;
     display: flex;
-    justify-content: center; /* Centers text vertically */
-    align-items: center; /* Centers text horizontally */
-    text-align: center; /* Ensures text is centered */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
+
+.card-text p {
+    margin: 2px 0; /* Maliit na margin sa pagitan ng mga text */
+    font-size: 14px; /* Adjust font size kung kinakailangan */
+}
+
+.card-text p:first-child {
+    font-size: 18px; /* Mas malaking font para sa title */
+    font-weight: bold;
+}
+
+.card-text p:nth-child(2) {
+    font-size: 12px; /* Mas maliit para sa subtitle */
+    color: #d9d9d9; /* Lighter color para sa subtitle effect */
+}
+
+.card-text p:last-child {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
 
 .card-text h3 {
     margin: 0;
