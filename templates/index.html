@@ -1,76 +1,56 @@
-{% include 'header.html' %}
-<div class="min-h-screen flex items-center justify-center bg-gray-100">
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl w-full p-4" style="background-color: aqua;">
-    
-    <!-- Card 1: Kapampangans Best -->
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-      <img src="/static/images/garland.png" alt="Kapampangans Best" class="w-full h-48 object-cover">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold text-gray-800">Kapampangans Best</h3>
-        <p class="text-gray-600 mt-2">Discover the best of Kapampangan culture, food, and traditions.</p>
-        <a href="#" class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded-lg">Learn More</a>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KapaLinga Web</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="img/logo.png" alt="" class="logo">
+        KapaLinga
     </div>
 
-    <!-- Card 2: Kapampangan Translator -->
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-      <img src="/static/images/private-lesson.png" alt="Kapampangan Translator" class="w-full h-48 object-cover">
-      <div class="p-6">
-        <h3 class="text-xl font-semibold text-gray-800">Kapampangan Translator</h3>
-        <p class="text-gray-600 mt-2">Translate words or phrases between Kapampangan and other languages.</p>
-        <a href="https://kapalinga-web-app.vercel.app/translator" class="mt-4 inline-block bg-green-600 text-white py-2 px-4 rounded-lg">Try Now</a>
-      </div>
+    <div class="language-select">
+        <select>
+            <option>Tagalog</option>
+            <option>English</option>
+        </select>
+        <span class="swap">↔</span>
+        <select>
+            <option>Kapampangan</option>
+        </select>
     </div>
-  </div>
-</div>
 
+    <div class="input-container">
+        <textarea placeholder="Type Here..."></textarea>
+        <img src="listen.svg" alt="Voice Input" class="voice-input">
+    </div>
 
+    <div class="input-container output-container">
+        <textarea readonly></textarea>
+        <button class="listen-button">🔊</button>
+    </div>
 
+    <div class="button-container">
+        <button>Translate</button>
+        <button>Clear</button>
+    </div>
 
-
-
-
-
-
-
-
-
-
-<footer class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-300 flex justify-around items-center py-2">
-    
-        <div class="flex flex-col items-center">
-        <a href="https://kapalinga-web-app.vercel.app/translator"></a>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 9v-6a2 2 0 014 0v6m-4 0h4" />
-            </svg>
-            <span class="text-xs text-gray-700">Home</span>
+    <div class="nav">
+        <a href="kapalinga.html" class="active">
+            <img src="home.svg" alt="Home" class="icon">
+            Home
         </a>
-        </div>
-    
-
-
-    
-    <div class="flex flex-col items-center">
-    <a href="https://kapalinga-web-app.vercel.app/learn"></a>
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      <span class="text-xs text-gray-700">Learn</span>
-    </a>
+        <a href="learn.html">
+            <img src="learn.svg" alt="Learn" class="icon">
+            Learn
+        </a>
+        <a href="events.html">
+            <img src="events.png" alt="Events" class="icon">
+            Events
+        </a>
     </div>
-   
-
-    <div class="flex flex-col items-center">
-        
-    <a href="https://kapalinga-web-app.vercel.app/events">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v4h4V7m0 4h4v4h-4v-4H8v4H4V7a1 1 0 011-1h14a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1v-3" />
-      </svg>
-      <span class="text-xs text-gray-700">Events</span>
-    </a>
-    </div>
-  
-  
-   
-  </footer>
-{% include 'footer.html' %}
+</body>
+</html>

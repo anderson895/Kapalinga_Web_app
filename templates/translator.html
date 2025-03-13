@@ -1,67 +1,57 @@
 {% include 'header.html' %}
 
+<div class="header">
+    <span class="header-title">KapaLinga</span>
+  
+</div>
+<div class="main-container">
 
 
-<div class="max-w-md w-full  p-8 bg-white shadow-lg rounded-2xl pb-40">
 
 
-    <div class="flex flex-col items-center mb-6">
-        <img src="/static/images/logo.png" alt="Kapalinga Logo" class="h-10 w-10 mb-2">
-        <h1 class="text-lg font-bold text-orange-500">KapaLinga</h1>
-    </div>
 
-
-    <!-- Language Selection -->
-    <div class="flex items-center justify-between mb-6">
-        <!-- Dropdown for Language 1 -->
-        <div class="relative">
+   
+    <!-- <div class="language-select">
             <select id="language1" class="block w-full bg-gray-100 border border-orange-300 rounded-2xl py-2 px-4 focus:outline-none focus:ring focus:border-orange-400">
                 <option>English</option>
                 <option>Tagalog</option>
                 <option>Kapampangan</option>
             </select>
-        </div>
-
-        <!-- Swap Button -->
-        <button id="swapBtn" class="bg-gray-200 p-2 rounded-2xl hover:bg-gray-300 transition">
-            <span class="text-xl">⇆</span>
-        </button>
-
-        <!-- Dropdown for Language 2 -->
-        <div class="relative">
-            <select id="language2" class="block w-full bg-gray-100 border border-orange-300 rounded-2xl py-2 px-4 focus:outline-none focus:ring focus:border-orange-400">
+        </div> -->
+        <div class="language-select">
+            <select id="language1">
+                <option>English</option>
+                <option>Tagalog</option>
+                <option>Kapampangan</option>
+            </select>
+            <span id="swapBtn" class="swap">↔</span>
+            <select id="language2">
                 <option>Kapampangan</option>
                 <option>English</option>
                 <option>Tagalog</option>
             </select>
         </div>
-    </div>
+      
+
+      
+    
 
     <!-- Input and Output Text Areas -->
-    <div class="space-y-4">
-        <!-- Input Area -->
-        <textarea
-            id="inputText"
-            class="w-full h-48 bg-white-100 border border-orange-300 rounded-2xl p-4 focus:outline-none focus:ring focus:border-orange-400 resize-none"
-            placeholder="Enter text here"
-        ></textarea>
-
-        <!-- Output Area -->
-        <div class="w-full h-48 bg-gray-100 border border-orange-300 rounded-2xl p-4 flex flex-col">
-            <!-- Translated Text Area -->
-            <textarea id="translatedText" class="w-full flex-grow bg-transparent border-none resize-none text-gray-700 focus:outline-none p-2 text-left">Translated text will appear here...
-            </textarea>
+        <div class="input-container">
+            <textarea id="inputText" placeholder="Type Here..."></textarea>
         
-            <!-- Listen Button -->
-            <div class="mt-2 flex justify-end">
-                <button id="listenBtn" class="bg-gray-100 border border-orange-300 py-2 px-4 rounded-2xl hover:bg-gray-600 transition">
-                    <i class="fa fa-volume-up text-lg mr-2"></i> Listen
-                </button>
-            </div>
+        
+                <i id="micIcon" class="fa fa-microphone-slash text-xl voice-input"></i>
+
+        </div>
+       
+
+
+        <div class="input-container output-container">
+            <textarea id="translatedText" readonly>Translated text will appear here...</textarea>
+            <button id="listenBtn" class="listen-button">🔊</button>
         </div>
         
-        
-    </div>
 
     <!-- Translate and Clear Buttons -->
     <div class="flex items-center justify-center mt-6 space-x-4">
@@ -73,58 +63,31 @@
         </button>
     </div>
 
-    <!-- Microphone Toggle -->
-    <div class="flex items-center justify-center mt-6">
-        <button id="micToggle" class="bg-gray-200 p-3 rounded-full">
-            <i id="micIcon" class="fa fa-microphone-slash text-xl"></i>
-        </button>
-    </div>
+ 
+
+
+
+</div>
+
+<div class="nav">
+    <a href="kapalinga.html">
+        <img src="/static/images/home.svg" alt="Home" class="icon">
+        Home
+    </a>
+    <a href="learn.html" class="active">
+        <img src="/static/images/learn.svg" alt="Learn" class="icon">
+        Learn
+    </a>
+    <a href="events.html">
+        <img src="/static/images/events.png" alt="Events" class="icon">
+        Events
+    </a>
 </div>
 
 
-
-
-
-<footer class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-300 flex justify-around items-center py-2">
-    
-        <div class="flex flex-col items-center">
-        <a href="https://kapalinga-web-app.vercel.app/">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 9v-6a2 2 0 014 0v6m-4 0h4" />
-            </svg>
-            <span class="text-xs text-gray-700">Home</span>
-        </a>
-        </div>
-    
-
-
-    
-    <div class="flex flex-col items-center">
-    <a href="https://kapalinga-web-app.vercel.app/learn">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      <span class="text-xs text-gray-700">Learn</span>
-    </a>
-    </div>
-   
-
-    <div class="flex flex-col items-center">
-        
-    <a href="https://kapalinga-web-app.vercel.app/events">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v4h4V7m0 4h4v4h-4v-4H8v4H4V7a1 1 0 011-1h14a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1v-3" />
-      </svg>
-      <span class="text-xs text-gray-700">Events</span>
-    </a>
-    </div>
-  
-  
-   
-  </footer>
-
-
 {% include 'footer.html' %}
+
+
 
 <script src="/static/js/mic_controller.js"></script>
 <script src="/static/js/listen_controller.js"></script>

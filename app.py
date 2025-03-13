@@ -307,6 +307,12 @@ def clarkMuseum():
     return render_template('events/view/clarkMuseum.html')
 
 
+# TESTING 
+@app.route('/test')
+def test():
+    return render_template('index.html')
+
+
 
 
 # Discoveries

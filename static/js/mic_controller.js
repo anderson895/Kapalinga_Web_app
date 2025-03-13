@@ -4,19 +4,17 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 // Function to initialize Speech Recognition
 function initializeSpeechRecognition() {
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    // Modern browsers with getUserMedia()
     navigator.mediaDevices.getUserMedia({ audio: true })
       .then(() => {
         console.log('Microphone permission granted');
         
         // Get DOM elements
-        const micToggle = document.getElementById('micToggle');
         const micIcon = document.getElementById('micIcon');
         const inputText = document.getElementById('inputText');
-  
+
         let recognition;
-        let isListening = false; // To track recognition state
-  
+        let isListening = false; // Track recognition state
+
         // Check if the browser supports SpeechRecognition
         if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
           recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
@@ -27,22 +25,19 @@ function initializeSpeechRecognition() {
           alert('Speech Recognition is not supported on this device.');
           return;
         }
-  
+
         // Toggle microphone and start/stop recognition
-        micToggle.addEventListener('click', () => {
+        micIcon.addEventListener('click', () => {
+
+          console.log('The mic is click');
+
           if (!isListening) {
-            micIcon.classList.remove('fa-microphone-slash');
-            micIcon.classList.add('fa-microphone');
             recognition.start(); // Start speech recognition
-            isListening = true;
           } else {
-            micIcon.classList.remove('fa-microphone');
-            micIcon.classList.add('fa-microphone-slash');
             recognition.stop(); // Stop speech recognition
-            isListening = false;
           }
         });
-  
+
         // Update the textarea with recognized speech
         recognition.onresult = (event) => {
           let transcript = '';
@@ -51,38 +46,31 @@ function initializeSpeechRecognition() {
           }
           inputText.value = transcript.trim(); // Update inputText with the speech
         };
-  
-        // Automatically stop recognition and update icon on end
-        recognition.onend = () => {
-          if (isListening) {
-            micIcon.classList.remove('fa-microphone');
-            micIcon.classList.add('fa-microphone-slash');
-            isListening = false;
-          }
+
+        // Handling start event
+        recognition.onstart = () => {
+          isListening = true;
+          micIcon.classList.remove('fa-microphone-slash');
+          micIcon.classList.add('fa-microphone');
         };
-  
+
+        // Handling end event
+        recognition.onend = () => {
+          isListening = false;
+          micIcon.classList.remove('fa-microphone');
+          micIcon.classList.add('fa-microphone-slash');
+        };
+
         // Handle recognition errors
         recognition.onerror = (event) => {
           console.error('Speech Recognition Error: ', event.error);
-          micIcon.classList.remove('fa-microphone');
-          micIcon.classList.add('fa-microphone-slash');
-          isListening = false;
+          recognition.stop(); // Ensure it stops on error
         };
       })
       .catch((err) => {
-        // Permission denied or other error
         console.error('Error accessing the microphone: ', err);
         alert('Permission to access the microphone is required for speech recognition.');
       });
-  } else if (navigator.getUserMedia) {
-    // Support for older browsers
-    navigator.getUserMedia({ audio: true }, () => {
-      console.log('Microphone permission granted');
-      // Initialize SpeechRecognition and other logic...
-    }, (err) => {
-      console.error('Error accessing the microphone: ', err);
-      alert('Permission to access the microphone is required for speech recognition.');
-    });
   } else {
     alert('Your browser does not support microphone access.');
   }

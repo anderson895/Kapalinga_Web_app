@@ -1,0 +1,168 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Header Styling */
+.header {
+    background: white;
+    padding: 5px;
+    border-bottom: 2px solid #d9d9d9;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* Logo Styling */
+.logo {
+    width: 42px;
+    height: 32px;
+    max-width: 100px; /* Adjust as needed */
+}
+
+
+.language-select select {
+    margin-top: 20px;
+    width: 180px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.language-select {
+    gap: 40px;
+}
+
+select {
+    width: 45%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #F97142;
+    border-radius: 20px;
+}
+
+.swap {
+    font-size: 18px;
+}
+
+.input-container {
+    position: relative;
+    margin: 10px auto;
+    max-width: 400px;
+}
+
+textarea {
+    width: 90%;
+    height: 180px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.voice-input {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    cursor: pointer;
+    z-index: 10;  /* Ensures it's above other elements */
+    pointer-events: auto;  /* Allows it to receive clicks */
+}
+
+.output-container {
+    position: relative;
+}
+
+.listen-button {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    background: white;
+    color: #F97142;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+button {
+    width: 120px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ff6600;
+    color: #ff6600;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: rgba(221, 107, 0, 0.24) 0px 3px 8px;
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 550;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    padding: 5px 0;
+}
+
+.nav a:hover {
+    color: black; /* Keep text color black on hover */
+}
+
+.nav a:hover img {
+    filter: invert(48%) sepia(71%) saturate(2619%) hue-rotate(346deg) brightness(101%) contrast(101%);
+    transition: filter 0.3s ease;
+}
+
+.nav a.active {
+    color: black; /* Keep text color black when active */
+}
+
+.nav a.active img {
+    filter: invert(48%) sepia(71%) saturate(2619%) hue-rotate(346deg) brightness(101%) contrast(101%);
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 2px;
+    object-fit: contain;
+}
+
+
+
+/* Add this media query if you want smaller icons on mobile */
+@media (max-width: 600px) {
+    .icon {
+        width: 30px;
+        height: px;
+    }
+}
