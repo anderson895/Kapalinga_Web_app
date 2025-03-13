@@ -31,10 +31,17 @@ body {
 
 .language-select select {
     margin-top: 20px;
-    width: 150px;
+    width: 180px;
     padding: 12px;
     font-size: 15px;
 }
+
+@media (max-width: 768px) { /* Para sa mobile view */
+    .language-select select {
+        width: 100px;
+    }
+}
+
 
 .language-select {
     gap: 40px;
