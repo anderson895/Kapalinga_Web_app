@@ -5,6 +5,11 @@ body {
     background-color: #f8f8f8;
 }
 
+.scroll-container a {
+    text-decoration: none;
+}
+
+
 .header {
     background: white;
     padding: 15px;

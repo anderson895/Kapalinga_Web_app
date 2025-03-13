@@ -7,12 +7,11 @@
 
   <link rel="stylesheet" href="/static/css/events.css">
   <link rel="icon" href="/static/images/logo.png" type="image/x-icon"> 
- <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
 <style>
   @font-face {
@@ -31,44 +30,42 @@
 
 
 <div class="header">
-  <span class="header-title">KapaLinga</span>
-
+  KapaLinga
 </div>
 
 <div class="main-container">
 
 
 <!-- Section: Things to Do -->
-<div class="flex flex-col items-start pl-4">
-  <h2 class="text-sm font-semibold leading-tight">Things to do in</h2>
-  <h1 class="text-3xl font-bold text-black">Pampanga</h1>
+<div class="subheader">
+  <p>Things to do in</p>
+  <p>Pampanga</p>
 </div>
-
 <!-- Image Categories Section -->
-<div class="overflow-x-auto whitespace-nowrap flex gap-4 p-2">
-  <a href="https://kapalinga-web-app.vercel.app/events">
-    <div class="w-24 flex-shrink-0">
+<div class="scroll-container">
+  <a href="/events">
+    <div class="scroll-item">
       <img src="/static/images/event/discover.png" alt="Festivals" class="w-full h-24 rounded-lg">
       <p class="text-center text-xs">Discoveries</p>
     </div>
   </a>
   
-  <a href="https://kapalinga-web-app.vercel.app/events/eventFestival">
-    <div class="w-24 flex-shrink-0">
+  <a href="/events/eventFestival">
+    <div class="scroll-item">
       <img src="/static/images/event/eventFestival.jpg" alt="Food & Delicacies" class="w-full h-24 rounded-lg">
       <p class="text-center text-xs">Events and festival</p>
     </div>
   </a>
   
-  <a href="https://kapalinga-web-app.vercel.app/events/foodDelicacies">
-    <div class="w-24 flex-shrink-0">
+  <a href="/events/foodDelicacies">
+    <div class="scroll-item">
       <img src="/static/images/event/foodDeli.png" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
       <p class="text-center text-xs">Food and delicacies</p>
     </div>
   </a>
   
-  <a href="https://kapalinga-web-app.vercel.app/events/tourist">
-    <div class="w-24 flex-shrink-0">
+  <a href="/events/tourist">
+    <div class="scroll-item">
       <img src="/static/images/event/tourist.jpeg" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
       <p class="text-center text-xs">Tourist Attractions</p>
     </div>
@@ -77,55 +74,30 @@
 
 
 <!-- Discoveries Section -->
-<h2 class="mt-6 text-lg font-bold border-t pt-4">Discoveries</h2>
-
-<!-- Discovery Cards -->
-<div class="space-y-3 mt-3 max-h-120 overflow-y-auto">
-  <a href="https://kapalinga-web-app.vercel.app/events/view/pampanga_food_culinary_capital">
-    <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-        <!-- Image (Fixed Size) -->
-        <img src="/static/images/106x100_outside/Culinary.png" 
-            alt="Culinary" 
-            class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
-        
-        <!-- Text Container (Adjustable Width) -->
-        <div class="flex-1 min-w-0">
-            <p class="text-sm font-semibold break-words">Culinary Capital of The Philippines</p>
-        </div>
-    </div>
-  
-  </a>
-
-
-  <a href="https://kapalinga-web-app.vercel.app/events/view/history">
-    <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-        <!-- Image (Fixed Size) -->
-        <img src="/static/images/106x100_outside/History.png" 
-            alt="History" 
-            class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
-        
-        <!-- Text Container (Adjustable Width) -->
-        <div class="flex-1 min-w-0">
-            <p class="text-sm font-semibold break-words">Brief History of Pampanga</p>
-        </div>
-    </div>
-  </a>
-
-
-
-  <a href="https://kapalinga-web-app.vercel.app/events/view/trad">
-      <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-        <!-- Image (Fixed Size) -->
-        <img src="/static/images/106x100_outside/Beliefs.png" 
-            alt="Beliefs" 
-            class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
-        
-        <!-- Text Container (Adjustable Width) -->
-        <div class="flex-1 min-w-0">
-            <p class="text-sm font-semibold break-words">Beliefs & Traditions</p>
-        </div>
-    </div>
-  </a>
+<div class="content-section">
+  <h2>Discoveries</h2>
+  <div class="vertical-scroll-container">
+      <div class="content-card">
+          <img src="/static/images/106x100_outside/Culinary.png" alt="Culinary">
+          <div class="card-text">
+              <h3>Culinary Capital of the Philippines</h3>
+          </div>
+      </div>
+      <div class="content-card">
+          <img src="/static/images/106x100_outside/History.png" alt="History">
+          <div class="card-text">
+              <h3>Brief History of Pampanga</h3>
+              
+          </div>
+      </div>
+      <div class="content-card">
+          <img src="/static/images/106x100_outside/Beliefs.png" alt="Beliefs">
+          <div class="card-text">
+              <h3>Beliefs & Traditions</h3>
+          </div>
+      </div>
+      </div>
+  </div>
 </div>
 
 
@@ -150,3 +122,4 @@
     </a>
 </div>
 {% include 'footer.html' %}
+<script src="/static/js/scroll.js"></script>
