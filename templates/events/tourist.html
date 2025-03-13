@@ -1,64 +1,92 @@
-{% include 'header.html' %}
-<div class="max-w-md w-full text-center p-8 bg-white shadow-lg rounded-2xl pb-20">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kapalinga Translator</title>
+
+  <link rel="stylesheet" href="/static/css/events.css">
+  <link rel="icon" href="/static/images/logo.png" type="image/x-icon"> 
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<style>
+  @font-face {
+    font-family: 'Freigeist Black';
+    src: url('/static/font/FreigeistMonoBlack.woff') format('woff2'),
+         url('/static/font/FreigeistMonoBlack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .font-freigeist {
+    font-family: 'Freigeist Black', sans-serif;
+  }
+</style>
 
 
-  <div class="flex flex-col items-center mb-6">
-    <h1 class="text-lg font-bold text-orange-500">KapaLinga</h1>
-  </div>
+
+<div class="header">
+  KapaLinga
+</div>
+
+<div class="main-container">
 
 
 <!-- Section: Things to Do -->
-<div class="flex flex-col items-start pl-4">
-    <h2 class="text-sm font-semibold leading-tight">Things to do in</h2>
-    <h1 class="text-3xl font-bold text-black">Pampanga</h1>
-  </div>
+<div class="subheader">
+  <p>Things to do in</p>
+  <p>Pampanga</p>
+</div>
+<!-- Image Categories Section -->
+<div class="scroll-container">
+  <a href="/events">
+    <div class="scroll-item">
+      <img src="/static/images/event/discover.png" alt="Festivals" class="w-full h-24 rounded-lg">
+      <p class="text-center text-xs">Discoveries</p>
+    </div>
+  </a>
   
-  <!-- Image Categories Section -->
-  <div class="overflow-x-auto whitespace-nowrap flex gap-4 p-2">
-    <a href="https://kapalinga-web-app.vercel.app/events">
-      <div class="w-24 flex-shrink-0">
-        <img src="/static/images/event/discover.png" alt="Festivals" class="w-full h-24 rounded-lg">
-        <p class="text-center text-xs">Discoveries</p>
-      </div>
-    </a>
-    
-    <a href="https://kapalinga-web-app.vercel.app/events/eventFestival">
-      <div class="w-24 flex-shrink-0">
-        <img src="/static/images/event/eventFestival.jpg" alt="Food & Delicacies" class="w-full h-24 rounded-lg">
-        <p class="text-center text-xs">Events and festival</p>
-      </div>
-    </a>
-    
-    <a href="https://kapalinga-web-app.vercel.app/events/foodDelicacies">
-      <div class="w-24 flex-shrink-0">
-        <img src="/static/images/event/foodDeli.png" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
-        <p class="text-center text-xs">Food and delicacies</p>
-      </div>
-    </a>
-    
-    <a href="https://kapalinga-web-app.vercel.app/events/tourist">
-      <div class="w-24 flex-shrink-0">
-        <img src="/static/images/event/tourist.jpeg" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
-        <p class="text-center text-xs">Tourist Attractions</p>
-      </div>
-    </a>
-  </div>
+  <a href="/events/eventFestival">
+    <div class="scroll-item">
+      <img src="/static/images/event/eventFestival.jpg" alt="Food & Delicacies" class="w-full h-24 rounded-lg">
+      <p class="text-center text-xs">Events and festival</p>
+    </div>
+  </a>
+  
+  <a href="/events/foodDelicacies">
+    <div class="scroll-item">
+      <img src="/static/images/event/foodDeli.png" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
+      <p class="text-center text-xs">Food and delicacies</p>
+    </div>
+  </a>
+  
+  <a href="/events/tourist">
+    <div class="scroll-item">
+      <img src="/static/images/event/tourist.jpeg" alt="Tourist Attractions" class="w-full h-24 rounded-lg">
+      <p class="text-center text-xs">Tourist Attractions</p>
+    </div>
+  </a>
+</div>
 
-<!-- Tourist Attractions Section -->
+
+
+<!-- 
 <h2 class="mt-6 text-lg font-bold border-t pt-4">Tourist Attractions</h2>
 
-<!-- Tourist Attraction Cards -->
 <div class="space-y-3 mt-3 max-h-80 overflow-y-auto">
 
   <a href="https://kapalinga-web-app.vercel.app/events/view/puning">
-       <!-- Puning Hot Spring -->
+     
        <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-        <!-- Image (Fixed Size) -->
+      
         <img src="/static/images/106x100_outside/puning_hot_spring.png" 
              alt="Puning Hot Spring" 
              class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
         
-        <!-- Text Container (Flexible Width) -->
         <div class="flex-1 min-w-0 pl-4">
             <p class="text-lg font-bold break-words">Puning Hot Spring</p>
             <p class="text-sm text-gray-300 break-words">Tourist Spot</p>
@@ -71,12 +99,11 @@
 
   <a href="https://kapalinga-web-app.vercel.app/events/view/sandbox">
     <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-        <!-- Image (Fixed Size) -->
+    
         <img src="/static/images/106x100_outside/sandbox.png" 
             alt="Sand Box Pampanga" 
             class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
         
-        <!-- Text Container (Flexible Width) -->
         <div class="flex-1 min-w-0 pl-4">
             <p class="text-lg font-bold break-words">Sand Box Pampanga</p>
             <p class="text-sm text-gray-300 break-words">Tourist Attraction in Porac</p>
@@ -87,12 +114,11 @@
 
     <a href="https://kapalinga-web-app.vercel.app/events/view/skyRanch">
       <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-          <!-- Image (Fixed Size) -->
+          
           <img src="/static/images/106x100_outside/sky_ranch.png" 
               alt="Sky Ranch Pampanga" 
               class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
           
-          <!-- Text Container (Flexible Width) -->
           <div class="flex-1 min-w-0 pl-4">
               <p class="text-lg font-bold break-words">Sky Ranch Pampanga</p>
               <p class="text-sm text-gray-300 break-words">Amusement & Theme Parks</p>
@@ -106,12 +132,11 @@
 
     <a href="https://kapalinga-web-app.vercel.app/events/view/aqua">
       <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-          <!-- Image (Fixed Size) -->
+      
           <img src="/static/images/106x100_outside/aqua_planet.png" 
               alt="Aqua Planet" 
               class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
           
-          <!-- Text Container (Flexible Width) -->
           <div class="flex-1 min-w-0 pl-4">
               <p class="text-lg font-bold break-words">Aqua Planet</p>
               <p class="text-sm text-gray-300 break-words">Water Park</p>
@@ -126,12 +151,11 @@
 
     <a href="https://kapalinga-web-app.vercel.app/events/view/clarkMuseum">
       <div class="flex items-center bg-gray-800 text-white p-4 rounded-xl shadow-md mt-3 mb-3">
-          <!-- Image (Fixed Size) -->
+      
           <img src="/static/images/106x100_outside/clark_museum.png" 
               alt="Clark Museum & 4D Theatre" 
               class="w-32 h-20 rounded-lg object-cover border-2 border-gray-500 flex-shrink-0">
           
-          <!-- Text Container (Flexible Width) -->
           <div class="flex-1 min-w-0 pl-4">
               <p class="text-lg font-bold break-words">Clark Museum & 4D Theatre</p>
               <p class="text-sm text-gray-300 break-words">Tourist Spot</p>
@@ -140,57 +164,90 @@
       </div>
     </a>
 
+</div> -->
 
-
-
-
-
-
-
-</div>
-
-  
-
-
-
-
-
-
-<footer class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-300 flex justify-around items-center py-2">
+<div class="content-section">
+  <h2>Food & Delicacies</h2>
+  <div class="vertical-scroll-container">
     
-  <div class="flex flex-col items-center">
-  <a href="https://kapalinga-web-app.vercel.app/">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 9v-6a2 2 0 014 0v6m-4 0h4" />
-      </svg>
-      <span class="text-xs text-gray-700">Home</span>
-  </a>
-  </div>
-
-
-
-
-<div class="flex flex-col items-center">
-<a href="https://kapalinga-web-app.vercel.app/learn">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-</svg>
-<span class="text-xs text-gray-700">Learn</span>
-</a>
-</div>
-
-
-<div class="flex flex-col items-center">
+   
+    <div class="content-card" onclick="location.href='/events/view/puning'" style="cursor: pointer;">
   
-<a href="https://kapalinga-web-app.vercel.app/events">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v4h4V7m0 4h4v4h-4v-4H8v4H4V7a1 1 0 011-1h14a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1v-3" />
-</svg>
-<span class="text-xs text-gray-700">Events</span>
-</a>
+          <img src="/static/images/106x100_outside/puning_hot_spring.png" alt="Culinary">
+          <div class="card-text">
+              <p>Puning Hot Spring</p>
+                <p>Tourist Spot</p>
+                <p>Angeles, Pampanga</p>
+          </div>
+      </div>
+  
+
+      <div class="content-card" onclick="location.href='/events/view/sandbox'" style="cursor: pointer;">
+          <img src="/static/images/106x100_outside/sandbox.png" >
+          <div class="card-text">
+              <p>Sand Box Pampanga</p>
+              <p>Tourist Attraction in Porac</p>
+              <p>Sapang Uwak Rd, Porac, Pampanga</p>
+              
+          </div>
+      </div>
+
+      <!-- /events/view/aurora -->
+      <div class="content-card" onclick="location.href='/events/view/skyRanch'" style="cursor: pointer;">
+          <img src="/static/images/106x100_outside/sky_ranch.png" alt="Beliefs">
+          <div class="card-text">
+              <p>Sky Ranch Pampanga</p>
+              <p>Amusement & Theme Parks</p>
+              <p>3rd Street, San Fernando, Pampanga</p>
+          </div>
+      </div>
+
+
+
+      
+      <div class="content-card" onclick="location.href='/events/view/aqua'" style="cursor: pointer;">
+          <img src="/static/images/106x100_outside/aqua_planet.png" alt="Beliefs">
+          <div class="card-text">
+              <p>Aqua Planet</p>
+              <p>Water Park</p>
+              <p>Mabalacat, Pampanga</p>
+          </div>
+      </div>
+      
+      <div class="content-card" onclick="location.href='/events/view/clarkMuseum'" style="cursor: pointer;">
+          <img src="/static/images/106x100_outside/clark_museum.png" alt="Beliefs">
+          <div class="card-text">
+              <p>Clark Museum & 4D Theatre</p>
+              <p>Tourist Spot</p>
+              <p>Clark, Freeport Zone</p>
+          </div>
+      </div>
+
+
+      </div>
+  </div>
 </div>
 
 
 
-</footer>
+
+
+
+</div>
+
+<div class="nav">
+    <a href="/" >
+        <img src="/static/images/home.svg" alt="Home" class="icon">
+        Home
+    </a>
+    <a href="/learn" >
+        <img src="/static/images/learn.svg" alt="Learn" class="icon">
+        Learn
+    </a>
+    <a href="/events" class="active">
+        <img src="/static/images/events.png" alt="Events" class="icon">
+        Events
+    </a>
+</div>
 {% include 'footer.html' %}
+<script src="/static/js/scroll.js"></script>
