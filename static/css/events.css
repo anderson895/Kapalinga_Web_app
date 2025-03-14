@@ -126,6 +126,14 @@ body {
     display: none;
 }
 
+/* Responsive: Mas maliit ang height kapag mobile */
+@media (max-width: 768px) {
+    .vertical-scroll-container {
+        height: 200px; /* Mas maliit na height para sa mobile */
+    }
+}
+
+
 .content-card {
     display: flex;
     background: #3B3B3B;
