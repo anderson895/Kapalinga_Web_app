@@ -3,7 +3,6 @@ from flask_cors import CORS
 import requests  # You will use requests to interact with the external Kapalinga API
 
 app = Flask(__name__)
-
 # Enable CORS for all domains (you may want to restrict this to specific domains in production)
 CORS(app)
 
